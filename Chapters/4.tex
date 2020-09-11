@@ -1,0 +1,108 @@
+\chapter{Weyl, Majorana, and Dirac spinors}
+\label{ch:4}
+
+In this chapter, we look at close relations between Weyl, Majorana, and Dirac spinors and how we can jump between one to the other (and when we should not). The advantages of understanding this is that it helps paint a clearer picture behind the interpretation of these rather `abstract' representations of what particles are. 
+
+\section{Particle-antiparticle}
+\label{ch:4:particle-antiparticle}
+We will begin this chapter by looking at the intricacies of particle-antiparticle existence. The source of their coexistence is by the natural imposition of charge-parity-time-reversal (CPT) invariance on the theory of particles. The particle-antiparticle pair would ensure that total charge, parity, and time-reversal is upheld. In the following text, the particle will be denoted by the subscript $p$ whereas the antiparticle will be denoted by the subscript ${\Bar{p}}$. Their representations as Dirac spinors (in terms of the irreducible Weyl spinors) are
+\begin{equation*}
+    \psi_p = \col{\eta_p}{\chi_p} \quad , \quad \psi_{\Bar{p}} = \col{\eta_{\Bar{p}}}{\chi_{\Bar{p}}}
+\end{equation*}
+
+It should be necessary to mention that it is not the case that $\eta_p = \eta_{\Bar{p}}$ and $\chi_p=\chi_{\Bar{p}}$.
+
+The relation between the conjugate Dirac spinor and its barred transpose used in the Lagrangian is
+\begin{equation}
+    \psi_{\Bar{p}} = \psi_p^C = C {\Bar{\psi}_p}^T \quad , \quad 
+    C = - i \gamma^2 \gamma^0 
+    = \begin{pmatrix} i \sigma^2 & 0 \\0 & - i\sigma^2\end{pmatrix}
+    \label{eqn:4:particle-antiparticle:conjugate relations}
+    \nonumber
+\end{equation}
+
+With this, 
+\begin{equation}
+    \psi_p^C = \col{i \sigma^2 {\chi_p^\dagger}^T}{-i\sigma^2{\eta_p^\dagger}^T}
+    \implies 
+    \begin{cases}
+        \eta_{\Bar{p}} = i \sigma^2 {\chi_p^\dagger}^T \\
+        \chi_{\Bar{p}} = - i \sigma^2 {\eta_p^\dagger}^T
+    \end{cases}
+    \label{eqn:4:particle-antiparticle:particle-antiparticle relations}
+\end{equation}
+
+We now see how intricately related the Weyl spinors of the particle and antiparticle are. One very important thing to point out is that from Equation \ref{eqn:4:particle-antiparticle:particle-antiparticle relations}, we can see that our discussion in Sec \ref{ch:2:lorentz invariances:using sigma2} agrees that $i \sigma^2 {\chi_p^\dagger}^T$ behaves as a right chiral and $- i \sigma^2 {\eta_p^\dagger}^T$ as a left chiral! Using this knowledge, we can get rid of any explicit right chiral representations in the Dirac spinor and simply express it as
+\begin{equation}
+    \psi = \col{i \sigma^2 {\chi_{\Bar{p}}^\dagger}^T}{\chi_p}
+    \label{eqn:4:particle-antiparticle:dirac spinor as left chirals}
+    \nonumber
+\end{equation}
+
+As mentioned at the start, the particle-antiparticle relations only exists because of the CPT invariance imposed on the Lagrangian. The other necessary constraint is that the Lagrangian needs to be real. (i.e. $\mathcal{L^\dagger} = \mathcal{L}$) This constraint tells us that the Lagrangian should either have both the hermitian conjugates of any chiral spinors, or none at all. The interpretation of this in QFT is very physical. There has to either have both the annihilation and creation operator of a particle, or none at all. Number operators will thus be a conserved operation. 
+
+The simplest contributor to the Lagrangian that has both left chiral spinors and ensures CPT and reality invariance is
+\begin{equation*}
+    \mathcal{L} = \chi^\dagger i \sigma^\mu \partial_\mu \chi
+\end{equation*}
+There is both a left chiral particle spinor creation and annihilation field operator in this Lagrangian.
+
+However, using the relation in Equation \ref{eqn:4:particle-antiparticle:particle-antiparticle relations}, the same Lagrangian then becomes
+\begin{equation*}
+    \mathcal{L} = \eta_{\Bar{p}}^T (i \sigma^2) i \sigma^\mu \partial_\mu \chi
+\end{equation*}
+which is a left chiral particle spinor and right chiral antiparticle spinor creation field operator! A very thought-provoking interpretation of the particle-antiparticle relationship.
+
+Insofar as we have used the term Weyl spinor, we have used it to identify particles that are both eigenstates of the helicity operator and the chiralty operator. However, there is a very subtle difference between the two that paints very different pictures of what a Weyl spinor really is. As eigenstates of the helicity operator, Weyl spinors are necessarily massless as shown in \ref{eqn:2:helical spinors}. However, as eigenstates of the chiralty operator, they are simply eigenstates with fixed transformation rules under the $SU(2) \times SU(2)$ Lorentz group as in Equations \ref{eqn:2:right chiral transformation} and \ref{eqn:2:left chiral transformation}. Thus, there is no constraint on them being massless. They can be as massive as they need be, as long as they are eigenstates that of the Lorentz group. However, for the sake of continuing the discussion regarding massive particles using the Weyl spinor representation, we shall adopt the convention of the latter, while duly keeping in mind that actual Weyl spinors are necessarily massless.
+
+Returning to the CPT invariance, we now see that we have a scheme that relates $\eta_p$ to $\chi_{\Bar{p}}$ and its conjugates. Through the Lorentz transformation, it is also possible (\textbf{for massive particles}) for the chiralty of the particle to change, i.e from $\eta_p$ to $\chi_p$ and vice versa. These 4 particles are thus related to each other as a multiplet that must exist as a collective state. It is because of this fact that we are allowed to express the right chiral particle as the left chiral antiparticle with impunity. This is evident in how the mass term of the Lagrangian can be expressed in either of the following representations:
+\begin{eqnarray}
+    m \Bar{\psi}\psi
+    &=& m (\chi^\dagger \eta + \eta^\dagger \chi) \nonext
+    &=& m (\chi\cdot\chi + \Bar{\chi}\cdot\Bar{\chi})
+\end{eqnarray}
+
+\section{Majorana spinors}
+\label{ch:4:majorana}
+The Majorana is a special subset of (massive) Dirac spinors. Its antiparticle state is the same as its particle state, i.e. $\eta_p = \eta_{\Bar{p}}$ and $\chi_p = \chi_{\Bar{\chi}}$. Unlike the general Dirac spinor, we now have 2 degrees of freedom instead of 4. The Majorana spinor in left chiral representation is
+\begin{equation}
+    \psi_M = \col{i \sigma^2 {\chi_p^\dagger}^T}{\chi_p}
+\end{equation}
+
+As good as the Majorana and Weyl representations are, it is not possible to build actual theories using them only as parity is not conserved. In the Lagrangian formalism of strictly Weyl or Majorana spinors, the mass terms will only be mass terms of left chirals, with no way of satisfying the parity between left and right chirals.
+
+Looking at the two from another angle, we see that
+\begin{equation*}
+    \begin{cases}
+        \Bar{\psi}_M \psi_M = \chi\cdot\chi + \Bar{\chi}\cdot\Bar{\chi} \\
+        \Bar{\psi}_M \gamma_5 \psi_M = - \chi\cdot\chi + \Bar{\chi}\cdot\Bar{\chi}
+    \end{cases}
+\end{equation*}
+which with some simple manipulation and generalisation, simply gives us
+\begin{equation*}
+\begin{cases}
+    \lambda\cdot\chi = \Bar{\Lambda}_M P_L\psi_M\\
+    \Bar{\lambda}\cdot\Bar{\chi} = \Bar{\Lambda}_M P_R \psi_M
+\end{cases}
+\end{equation*}
+
+Lastly, making use of the fact that $\gamma^\mu$ can be represented off-diagonally as
+\begin{equation}
+    \gamma^\mu = \begin{pmatrix} 0 & \Bar{\sigma}^\mu \\ \sigma^\mu & 0 \end{pmatrix}
+\end{equation}
+we have
+
+\begin{equation*}
+    \begin{cases}
+        \Bar{\psi}_M \gamma^\mu \Lambda_M = \chi^\dagger \Bar{\sigma}^\mu \lambda - \lambda^\dagger \Bar{\sigma}^\mu \chi \\
+        \Bar{\psi}_M \gamma_5\gamma^\mu \Lambda_M = \chi^\dagger \Bar{\sigma}^\mu \lambda + \lambda^\dagger \Bar{\sigma}^\mu \chi
+    \end{cases}
+\end{equation*}
+\begin{equation*}
+    \implies
+    \begin{cases}
+        \chi^\dagger \Bar{\sigma}^\mu \lambda = \Bar{\psi}_M P_R \gamma^\mu \Lambda_M\\
+        \lambda^\dagger \Bar{\sigma}^\mu \chi = - \Bar{\psi}_M P_L \gamma^\mu \Lambda_M
+    \end{cases}
+\end{equation*}
+a very neat relation between the Weyl and Majorana representations of the \textbf{massive} Majorana spinor.

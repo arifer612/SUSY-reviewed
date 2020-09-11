@@ -1,0 +1,87 @@
+%%%%%%%%%%%%%%%%%%%% author.tex %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% sample root file for your "contribution" to a contributed volume
+%
+% Use this file as a template for your own input.
+%
+%%%%%%%%%%%%%%%% Springer %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% RECOMMENDED %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[%
+graybox,
+vecphys,
+]{svmult}
+
+% choose options for [] as required from the list
+% in the Reference Guide
+
+\usepackage{type1cm}        % activate if the above 3 fonts are
+                            % not available on your system
+%
+\usepackage{makeidx}         % allows index generation
+\usepackage{graphicx}        % standard LaTeX graphics tool
+                             % when including figure files
+\usepackage{multicol}        % used for the two-column index
+\usepackage[bottom]{footmisc}% places footnotes at page bottom
+
+
+\usepackage{newtxtext}       % 
+\usepackage{newtxmath}       % selects Times Roman as basic font
+
+% see the list of further useful packages
+% in the Reference Guide
+
+\makeindex             % used for the subject index
+                       % please use the style svind.ist with
+                       % your makeindex program
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% USER DEFINITIONS
+
+%USER PACKAGES
+\usepackage{slashed}        % Dirac slash notation
+\usepackage{braket}         % Braket notation
+\usepackage{bbold}
+
+\newcommand{\nonext}{\nonumber \\}  % Used for eqnarrays
+\newcommand{\td}{\text{d}}          % For differentials
+\newcommand{\e}[1]{\text{e}^{#1}}   % Exponential
+\newcommand{\lc}{\left(}            % Left bracket formatting
+\newcommand{\rc}{\right)}           % Right bracket formatting
+\newcommand{\iden}{\mathbb{1}}      % Identity
+\newcommand{\col}[2]{\begin{pmatrix}{#1}\\{#2}\end{pmatrix}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\title*{Review of Supersymmetry}
+% Use \titlerunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\author{Arif Er}
+% Use \authorrunning{Short Title} for an abbreviated version of
+% your contribution title if the original one is too long
+\institute{Arif Er \at NUS, \email{e0032348@u.nus.edu}}
+%
+% Use the package "url.sty" to avoid
+% problems with special characters
+% used in your e-mail or web address
+%
+\maketitle
+
+\abstract{A review and revision of my study of Supersymmetry I studied in the summer of 2020. This review will cover the topics covered in \textit{Supersymmetry DeMYSTiFied} by Labelle \cite{labelle2010supersymmetry}}
+
+\setcounter{chapter}{1}
+\include{Chapters/2}
+\include{Chapters/3}
+\include{Chapters/4}
+\include{Chapters/5}
+
+
+%\chapter*{Appendix}
+
+\bibliographystyle{spphys}
+\bibliography{reference.bib}
+\end{document}

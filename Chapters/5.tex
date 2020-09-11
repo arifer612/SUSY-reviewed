@@ -1,0 +1,42 @@
+\chapter{Building the Lagrangian}
+\label{ch:5}
+
+We will build attempt at building the most basic Lagrangians with the invariants and constraints from the previous chapters. Several constraints on the Lagrangian will have to be imposed to ground our discussion in renormalisable theories.
+
+\section{Dimensionfull Lagrangians}
+In building the Lagrangian, we shall keep to renormalisable theories where $D = 4$ is maximally the further we will go in dimensions. The dimensions are defined in terms of powers of energy and as should be, the natural units are 1 (thus being dimensionless). With this, scalar fields are of dimension 1, derivatives are of dimension 1, fermion fields are of dimension $3/2$. Simple dimensional analysis will give us these.
+
+\section{The simplest Lagrangian}
+Let us consider the simplest toy model we can make -- a single free massless fermionic pair and a single free massless bosonic pair. They do not interact with each other (this will be introduced in Chapter \ref{ch:6}). The Lagrangian is simply
+\begin{equation}
+    \mathcal{L} = \partial_\mu \phi \partial^\mu \phi^\dagger + \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi
+\end{equation}
+
+The transformation of these fields are
+\begin{eqnarray}
+    \phi &\rightarrow& \phi + \delta \phi \nonext
+    \chi &\rightarrow& \chi + \xi \chi \nonumber
+\end{eqnarray}
+
+Let us bring in the postulate of supersymmetry -- that bosons will transform into fermions and vice versa.
+\begin{equation}
+    \delta \phi \propto \xi \chi \quad , \quad \xi \ll 1
+    \label{eqn:5:boson transformation approx}
+\end{equation}
+
+For Equation \ref{eqn:5:boson transformation approx} to satisfy the dimensionality of both sides of the equation, we see that $\xi$ has to be a Grassmann spinor of dimension $-1/2$. To actually determine the proportionality of the relationship in Equation \ref{eqn:5:boson transformation approx}, we have to impose the Lorentz invariance of the Lagrangian to obtain any more information.
+
+Since $\xi$ is spinor, we have the freedom to pick a left chiral spinor, so we can have
+\begin{equation}
+    \delta \phi = \xi \cdot \chi
+    \label{eqn:5:boson transformation}
+\end{equation}
+which is fully Lorentz invariant and a valid term in a Lagrangian.
+
+We move on to the transformation of the fermion.
+\begin{equation}
+    \delta \chi = -i (\partial\phi) \sigma^\mu (i\sigma^2) \xi^*
+    \label{eqn:5:fermion transformation}
+\end{equation}
+where we obtained this the same way, by imposing the equality of dimensions on both sides of the equation, Lorentz invariablity, and the reality of the Lagrangian.
+

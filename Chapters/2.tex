@@ -1,0 +1,241 @@
+\chapter{Introduction to Weyl spinors}
+\label{ch:2}
+
+We begin the revision by recapping on the physics of the Weyl spinors and how they are relevant in our study of the Quantum Field Theories. We will then attempt to formulate possible Lorentz invariants from the Dirac spinors so that they can be used in the Lagrangian formalism. Lastly, we will look at the Van der Waarden notation, a more compact and useful notation for Weyl spinors especially in the context of Supersymmetry.
+
+\section{The Dirac equation}
+\label{ch:1:dirac equation}
+Our starting point is the Dirac equation. It relates shows how one can obtain the eigenvalue of the momentum operator of a quantum particle.
+\begin{equation}
+    \gamma^\mu P_\mu \psi = m \psi \quad , P_\mu \equiv i \partial_\mu
+    \label{eqn:2:dirac equation}
+\end{equation}
+
+Using the Dirac slash, it is identically
+\begin{equation}
+    \slashed P \psi = m \psi
+    \label{eqn:2:slashed dirac equation}
+\end{equation}
+
+The Lagrangian for a Dirac particle is thus
+\begin{equation}
+    \mathcal{L}_{Dirac} = \Bar{\psi} (\gamma^\mu P_\mu - m) \psi
+    \label{eqn:2:dirac lagrangian}
+\end{equation}
+
+The $\gamma^\mu$ used above are the Dirac matrices, $4\times4$ matrices that are built off the Pauli matrices.
+\begin{equation}
+    \gamma^0 =
+    \begin{pmatrix}
+        0 & \mathbb{1}\\
+        \mathbb{1} & 0
+    \end{pmatrix}
+    \quad , \quad
+    \gamma^i =
+    \begin{pmatrix}
+        0 & - \sigma^i\\
+        \sigma^i & 0
+    \end{pmatrix}
+    \label{eqn:2:dirac matrices}
+\end{equation}
+
+Using the mostly negative signature metric (i.e. $\eta_\mu\nu = (+, -, -, -)$), the Dirac matrices are:
+\begin{equation}
+    \gamma^\mu = (\gamma^0, \gamma^i) \quad , \quad\gamma_\mu = (\gamma^0, -\gamma^i)
+    \label{eqn:2:dirac matrices lowered}
+\end{equation}
+
+We were also introduced another new Dirac matrix, for the fact that it simplifies a large deal of work in the later part of our journey.
+\begin{equation}
+    \gamma_5 =
+    \begin{pmatrix}
+        \mathbb{1} & 0\\
+        0 & \mathbb{1}
+        \label{eqn:2:dirac matrix 5}
+    \end{pmatrix}
+\end{equation}
+
+From the properties of Pauli matrices, we see some interesting results that would turn out to be central to the formulation of the framework.
+\begin{eqnarray}
+    \sigma^2 (\sigma^i)^T &=& - (\sigma^i) \sigma^2 \nonext
+    \sigma^2 (\sigma^i)^* &=& - (\sigma^i) \sigma^2
+    \label{eqn:2:pauli matrix property 1}
+\end{eqnarray}
+\begin{eqnarray}
+    \sigma^2 (\sigma^i) \sigma^2 = - (\sigma^i)^T = - (\sigma^i)^*\nonext
+    \therefore \sigma^2 (\sigma^i)^T \sigma^2 = - (\sigma^i)
+    \label{eqn:2:sigma T and *}
+\end{eqnarray}
+
+We thus have the following representation of a vector weighted matrix
+\begin{eqnarray}
+    \Vec{A} \cdot \Vec{\sigma} \sigma^j &=& A^i \sigma^i \sigma^j \nonext
+    &=& A^i (\sigma^j \sigma^i - [\sigma^i, \sigma^j]) \nonext
+    &=& A^i \sigma^j \sigma^i - 2 i \varepsilon^{ijk}A^i \sigma^k \nonext
+    &=& \sigma^j \Vec{A} \cdot \Vec{\sigma} - 2 i (\Vec{A} \times \Vec{\sigma})
+    \label{eqn:2:vector weighted matrix}
+\end{eqnarray}
+
+\section{Dirac spinors}
+These are reducible 4 component spinors. Their lowest representation is a 2 component spinor, a `left-chiral' and a `right-chiral' spinor. 
+\begin{equation}
+    \psi = \begin{pmatrix} \eta \\ \chi \end{pmatrix}
+    \label{eqn:2:dirac spinor}
+\end{equation}
+
+Extracting the irreducible spinors is simple with a projection operator. Clearly, if
+\begin{equation*}
+    P_R \psi = \begin{pmatrix} \eta \\ 0 \end{pmatrix} 
+    \quad , \quad
+    P_L \psi = \begin{pmatrix} 0 \\ \chi \end{pmatrix}
+\end{equation*}
+The projection operators have to be:
+\begin{equation*}
+    P_R = \begin{pmatrix} \mathbb{1} & 0 \\ 0 & 0 \end{pmatrix}
+    \quad , \quad
+    P_L = \begin{pmatrix} 0 & 0 \\ 0 & \mathbb{1} \end{pmatrix}
+\end{equation*}
+which relates back to the $\gamma_5$ matrix in Eqn \ref{eqn:2:dirac matrix 5} as
+\begin{equation}
+    \gamma_5 = P_R - P_L
+\end{equation}
+
+We will use this to expand the Dirac equation into its irreducibles.
+\begin{eqnarray}
+    \gamma^\mu P_\mu \psi = m \psi
+    &\implies&
+    \begin{cases}
+        (E \mathbb{1} + \Vec{\sigma} \cdot \Vec{p}) \chi = m \eta\\
+        (E \mathbb{1} - \Vec{\sigma} \cdot \Vec{p}) \eta = m \chi
+    \end{cases}
+    \label{eqn:2:dirac equation in weyl spinors}
+    \\
+    &=&
+    \begin{cases}
+        \Bar{\sigma}^\mu P_\mu \chi = m \eta \\
+        \sigma^\mu P_\mu \eta = m \chi
+    \end{cases}
+    \label{eqn:2:dirac equation in weyl spinors compact}
+\end{eqnarray}
+where we are introduced to $\sigma^\mu = (\mathbb{1}, \sigma^i)$ and $\Bar{\sigma}^\mu = (\mathbb{1}, - \sigma^i)$ to get to Equation \ref{eqn:2:dirac equation in weyl spinors compact} from Equation \ref{eqn:2:dirac equation in weyl spinors}
+
+The Dirac Lagrangian in its irreducible forms is thus
+\begin{equation}
+    \mathcal{L}_{Dirac} = \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi + \eta^\dagger i \sigma^\mu \partial_\mu \eta - m(\chi^\dagger \eta + \eta^\dagger \chi)
+    \label{eqn:2:dirac lagrangian in weyl spinors}
+\end{equation}
+
+This reveals the coupled nature of the Dirac spinor irreducibles, or at least if they are massive. The special case of the massless Dirac spinor are known Weyl spinors. Being massless, we get the Weyl equations that tell us the eigenvalues of the spinors with respect to the $\Vec{\sigma}\cdot\Vec{p}$ operator:
+\begin{equation}
+    \begin{cases}
+        E \eta = \Vec{\sigma} \cdot \Vec{p} \eta\\
+        E \chi = - \Vec{\sigma} \cdot \Vec{p} \chi
+    \end{cases}
+    \implies
+    \begin{cases}
+        \frac{\Vec{\sigma}\cdot\Vec{p}}{\vert p \vert} \eta = \eta\\
+        \frac{\Vec{\sigma}\cdot\Vec{p}}{\vert p \vert} \chi = \chi\\
+    \end{cases}
+    \label{eqn:2:weyl equations}
+\end{equation}
+
+And very conveniently, making use of the fact that $\Vec{S}\cdot\hat{p}$ is the helicity operator, we see why $\eta$ and $\chi$ are called chiral spinors!
+\begin{equation}
+    \Vec{S} \cdot \hat{p} \eta = \frac{\hbar}{2} \eta
+    \quad , \quad 
+    \Vec{S} \cdot \hat{p} \chi = - \frac{\hbar}{2} \chi
+    \label{eqn:2:helical spinors}
+\end{equation}
+
+\section{Lorentz invariances}
+\label{ch:2:lorentz invariances}
+We want to build Lorentz invariants made of Weyl spinors, so that we might add them as interactions when building Lagrangians of any theory that might come along. For this, we need to know how they transform. From the fact that the Dirac Lagrangian is necessarily Lorentz invariant, the terms of Equation \ref{eqn:2:dirac lagrangian in weyl spinors} also has to be. Let us look into each term carefully.
+
+\subsection{Pure terms}
+\label{ch:2:lorentz invariances:pure terms}
+The `pure' terms are $\chi^\dagger\eta$ and $\eta^\dagger\chi$. We know how each spinor transforms under the Lorentz group:
+\begin{eqnarray}
+    \eta &\rightarrow& \lc\mathbb{1} + \frac{1}{2} i \Vec{\varepsilon}\cdot\Vec{\sigma} - \frac{1}{2} \Vec{\beta}\cdot\Vec{\sigma}\rc \eta
+    \label{eqn:2:right chiral transformation} \\
+    \chi &\rightarrow& \lc\mathbb{1} + \frac{1}{2} i \Vec{\varepsilon}\cdot\Vec{\sigma} + \frac{1}{2} \Vec{\beta}\cdot\Vec{\sigma}\rc \chi 
+    \label{eqn:2:left chiral transformation}
+\end{eqnarray}
+The difference between the transformation of the left and right chiral spinors is very subtle. But this difference allows us to understand why the `pure' terms are invariant. Moving on to the remainder of the terms,
+
+\subsection{Mixed terms}
+\label{ch:2:lorentz invariances:mixed terms}
+These are the terms with $\sigma^\mu$ in them: $\chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi$ and $\eta^\dagger i \sigma^\mu \partial_\mu \eta$. We know from earlier that $\chi^\dagger\eta$ forms an invariant. Therefore the term that couples with $\chi^\dagger$ has to transform like a right chiral spinor. This means that $i\Bar{\sigma^\mu}\partial_\mu\chi$ transforms like a right chiral spinor. This is trivial to prove. One way is to recall the coupled irreducibles in Equation \ref{eqn:2:dirac equation in weyl spinors compact}. $m$ is an invariant, so the remaining terms have to transform in the same manner as each other. The other way is to explicitly find the transformation rule of $i \Bar{\sigma}^\mu \partial_\mu \chi$ to find out that it does indeed transform as a right chiral spinor. It is the same as $i \sigma^\mu \partial_\mu \eta$, which transforms neatly as a left chiral spinor.
+
+Moreover, if we were to do an integration by parts (IbP) on these mixed terms, we will find that:
+\begin{equation}
+    - \partial_\mu(\chi^\dagger i \Bar{\sigma}^\mu) \chi = (i \Bar{\sigma}^\mu \partial_\mu \chi)^\dagger \chi
+    \label{eqn:2:invariant ibp}
+\end{equation}
+is also in invariant! Clearly for Equation \ref{eqn:2:invariant ibp} to make sense with the results in the Section \ref{ch:2:lorentz invariances:pure terms} $i \Bar{\sigma}^\mu \partial_\mu \chi$ has to transform as a right chiral, which again agrees with what we did earlier.
+
+\subsection{Using only left chirals}
+\label{ch:2:lorentz invariances:using sigma2}
+Using the properties of $\sigma^2$, we can create Lorentz invariants using only left chirals, without the need of any vector matrices. The transformation of ${\chi^\dagger}^T$ in the contraction $\chi^\dagger\eta$ is
+\begin{eqnarray}
+    {\chi^\dagger}^T &\rightarrow& \lc \iden + \frac{1}{2} i \Vec{\varepsilon} \cdot \Vec{\sigma} + \frac{1}{2} \Vec{\beta} \cdot \Vec{\sigma} \rc^* {\chi^\dagger}^T \nonext
+    &=& \lc \iden - \frac{1}{2} i \Vec{\varepsilon} \cdot \Vec{\sigma} + \frac{1}{2} \Vec{\beta} \cdot \Vec{\sigma} \rc {\chi^\dagger}^T
+    \label{eqn:2:left chiral dagger transformation}
+\end{eqnarray}
+
+To pair this with the left chiral $\chi$, we need to get it to transform as a right chiral, for which is Equation \ref{eqn:2:left chiral dagger transformation} but with the opposite sign. Multiplying throughout by $i \sigma^2$ does exactly that, as we did in Equation \ref{eqn:2:pauli matrix property 1}. Therefore, $i \sigma^2 {\chi^\dagger}^T$ transforms like a right chiral!
+
+The invariant we will get out of this combination is done by taking the hermitian conjugate of it and pairing it with $\chi$.
+\begin{equation}
+    \lc i \sigma^2 {\chi^\dagger}^T \rc^\dagger = \chi^T \lc -i \sigma^2 \rc \chi
+    \label{eqn:2:left chirals invariant}
+\end{equation}
+
+\subsection{Method}
+\label{ch:2:lorentz invariances:method}
+From what we have seen so far, Lorentz invariants made of Weyl spinors all require a combination of one left and right chiral spinor, with either of them being a hermitian conjugate. We can extend this further by making use of the fact that $\chi^\dagger \Bar{\sigma}^\mu \chi$ is a (1,0) tensor, since $P_\mu$ necessarily transforms as a vector under the Lorentz group.
+
+\begin{question}{Creating a rank 2 covariant tensor from left chirals, without derivatives}
+    This is a rather trivial exercise if we work out how the rank 1 covariant tensor $\chi^\dagger \Bar{\sigma}^\mu \chi$ transforms. Let us define the transformation of $\chi$ as $\chi \rightarrow A^{-1} \chi $, where A is naturally a transformation matrix.
+    
+    \begin{eqnarray*}
+        \chi^\dagger \Bar{\sigma}^\mu \chi \rightarrow {\chi'}^\dagger \Bar{\sigma'}^\mu \chi' &=& \chi^\dagger {A^{-1}}^\dagger \Bar{\sigma}^\mu A^{-1} \chi
+        \nonext
+        &=& \chi^\dagger \Lambda^\mu_\nu \Bar{\sigma}^\nu\chi
+    \end{eqnarray*}
+    
+    From this, we know that the transformation of $\Bar{\sigma}^\mu$ is
+    \begin{equation*}
+        \Bar{\sigma}^\mu \rightarrow A^\dagger \Lambda^\mu_\nu \Bar{\sigma}^\nu A
+    \end{equation*}
+    Likewise for $\sigma^\mu$, since $\eta^\dagger \sigma^\mu \eta$ is a rank 1 covariant tensor and $\eta^\dagger\chi$ is invariant (i.e. $\eta \rightarrow A^\dagger \eta$
+    \begin{equation*}
+        \sigma^\mu \rightarrow A^{-1} \Lambda^\mu_\nu \sigma^\nu {A^{-1}}^\dagger
+    \end{equation*}
+    
+    Putting them together, we have
+    \begin{equation*}
+        \sigma^\mu \Bar{\sigma}^\nu \rightarrow A^{-1}\Lambda^\mu_\alpha\Lambda^\nu_\beta \sigma^\alpha \sigma^\beta A
+    \end{equation*}
+    
+    Fitting this with a something that transforms as $? \rightarrow A^\dagger$ (i.e. a right chiral spinor) on the left and $? \rightarrow A^{-1}$ (i.e. a left chiral spinor) on the right, we will get a rank 2 covariant tensor! Since we are looking to populate these positions with only left chirals, the options are obvious.
+    \begin{equation*}
+        \chi^T (-i \sigma^2) \sigma^\mu \Bar{\sigma}^\nu \chi \rightarrow \Lambda^\mu_\alpha \Lambda^\nu_\beta \chi^T \lc -i \sigma^2\rc \sigma^\alpha \Bar{\sigma}^\beta \chi
+    \end{equation*}
+\end{question}
+
+\section{Van der Waerden notation}
+\label{ch:2:van der waerden notation}
+Instead of the cumbersome $\pm i \sigma^2$ in between the chiral spinors, the Van der Waerden notation defines a new kind of dot product between chiral spinors. We saw how $\chi^T (-i \sigma^2) \chi$ and $\eta^\dagger (i \sigma^2) {\eta^\dagger}^T$ are invariants, so we shall define 2 dot products as such:
+\begin{eqnarray}
+    \chi \cdot \chi &\equiv& \chi^T (-i \sigma^2) \chi \nonext
+    \Bar{\chi} \cdot \Bar{\chi} &\equiv& \chi^\dagger (i \sigma^2) {\chi^\dagger}^T \nonumber
+\end{eqnarray}
+
+Expanding the components,
+\begin{eqnarray}
+    \chi \cdot\chi = \chi_2 \chi_1 - \chi_1\chi_2 \nonext
+    \Bar{\chi} \cdot \Bar{\chi} = \chi^\dagger_1 \chi^\dagger_2 - \chi^\dagger_2 \chi^\dagger_1
+    \label{eqn:2:van der waerden expanded}
+\end{eqnarray}
+
+The good thing about this notation is that it shows that the dot product is now hermitian! So we can employ this directly in the Lagrangian fully knowing that we need not worry about any real-ness violations.
