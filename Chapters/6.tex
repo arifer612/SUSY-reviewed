@@ -1,0 +1,145 @@
+\chapter{SUSY Charges}
+\label{ch:6}
+
+We will start off with a short review on the necessary elements we need to know about symmetry chargers. We will look at how to derive and interpret the charges that make up supersymmetry. Once we have the charges, we will attempt to obtain the supersymmetry transformation rules of fermions, bosons, and auxiliary fields.
+
+\section{Quick review}
+We define a unitary transformation as $U \equiv \exp[\pm i \varepsilon\cdot Q]$ where $\varepsilon$ is an infinitesimal factor and $Q$ is the charge of the symmetry. The dot product implies that there may be more than 1 charge to the symmetry. The transformation of a state in the symmetry is defined as $\phi'(x) \equiv U \phi(x) U^\dagger$
+
+The transformation of a state in the symmetry may be defined in 2 manners: through the unitary transformations; or through a varaince.
+\begin{eqnarray}
+    \phi'(x) &\equiv& U \phi(x) U^\dagger \nonext
+    &\equiv& \phi(x) + \delta\phi(x) \nonumber
+\end{eqnarray}
+
+Making use of the fact that $\varepsilon$ is infinitesimal, we may, to leading order of $\varepsilon$, relate the variance of $\phi(x)$ to the commutator relation of $Q$ and $\phi$.
+\begin{equation}
+    \delta \phi(x) = \pm i [\varepsilon\cdot Q, \phi(x)]
+    \label{eqn:6:charge and commutator relation}
+\end{equation}
+
+The explicit representations of the charges may be obtained from either of 2 way: through the symmetry currents in Equation \ref{eqn:6:charge as symmetry current}; or as differential operators in Equation \ref{eqn:6:charge as differential operator}. We will obtain the algebra of the symmetry if we work out all the commutator relations of the charges in the symmetry.
+
+\begin{equation}
+    Q^i = \int \td^3 x J_0^i(\Vec{x}, t)
+    \label{eqn:6:charge as symmetry current}
+\end{equation}
+
+\begin{equation}
+    \phi(x') \equiv \exp[\pm i \varepsilon\cdot\hat{Q}]\phi(x)
+    \label{eqn:6:charge as differential operator}
+\end{equation}
+where here we emphasise $\hat{Q}$ is a differential operator through the hat notation.
+
+Instead of finding the explicit representations of the charges to determine the algebra of the symmetry, we may consider the charges as quantum field operators and work it out. Consider 2 consecutive transformations, with infinitesimal factors $\alpha$ and $\beta$:
+\begin{eqnarray}
+    U_\beta U_\alpha \phi U_\alpha^\dagger U_\beta^\dagger &\approx& \phi + i [\alpha\cdot Q, \phi] + i [\beta\cdot Q, \phi] - [\beta\cdot Q, [\alpha\cdot Q, \phi]] + ... \nonext
+    &=& \delta_\beta \delta_\alpha \phi
+\end{eqnarray}
+
+Working out the opposite order,
+\begin{eqnarray}
+    [\delta_\beta, \delta_\alpha] \phi = \big[[\alpha\cdot Q, \beta\cdot Q], \phi\big] 
+    \label{eqn:6:charge as quantum field operators}
+\end{eqnarray}
+
+\section{Deriving the supersymmetric charges}
+We have 2 charges to consider, since there are 4 degrees of freedom that are be grouped as 2 pairs of spinors (i.e. $\xi$, $\xi^*$). Using the transformation rules from the previous chapter, we can now express them in terms of the SUSY charge commutator relations as
+\begin{eqnarray}
+    \left[i Q \cdot \xi + i \Bar{Q} \cdot \Bar{\xi} \right] &=& - i \xi \cdot \chi \\
+    \label{eqn:6:boson transformation rule full}
+    \left[i Q \cdot \xi + i \Bar{Q} \cdot \Bar{\xi} \right] &=& - i (\partial_\mu \phi) \sigma^\mu \sigma^2 \xi^*
+    \label{eqn:6:fermion transformation rule full}
+\end{eqnarray}
+
+Since $\xi$ and $\xi^*$ are independent, we see that the only non-vanishing terms are:
+\begin{eqnarray}
+    \left[ \xi\cdot Q, \phi\right] &=& -i \xi \cdot \chi \\
+    \label{eqn:6:boson transformation rule}
+    \left[\Bar{\xi}\cdot\Bar{Q}, \chi\right] &=& -i (\partial_\mu \phi) \sigma^\mu \sigma^2 \xi^*
+    \label{eqn:6:fermion transformation rule}
+\end{eqnarray}
+
+Matching the charges with each other in a commutator relation, we get the following:
+\begin{eqnarray}
+    \left[Q\cdot\xi,Q\cdot\beta\right] &=& (\sigma^2)^{ab}(\sigma^2)^{cd} \xi_b \beta_d \{Q_a, Q_c\} \nonext
+    \left[Q\cdot\xi, \Bar{Q}\cdot\Bar{\beta}\right] &=& - (\sigma^2)^{ab}(\sigma^2)^{cd} \xi_b \beta^*_d \{Q_a, Q^\dagger_c\} \nonext
+    \left[\Bar{Q}\cdot\Bar{\xi}, Q\cdot\beta\right] &=& (\sigma^2)^{ab}(\sigma^2)^{cd} \xi^*_b \beta_d \{Q^\dagger_a, Q_c\} \nonext
+    \left[\Bar{Q}\cdot\Bar{\xi}, \Bar{Q}\cdot\Bar{\beta}\right] &=& (\sigma^2)^{ab}(\sigma^2)^{cd} \xi^*_b \beta^*_d \{Q^\dagger_a, Q^\dagger_c\} \label{eqn:6:SUSY charges commutator relation}
+\end{eqnarray}
+The algebra of the symmetry is embedded in the anti-commutator relations in these equations.
+
+With these, we know how to get
+\begin{equation}
+    [\delta_\beta, \delta_\xi] \phi = \big[ \left[Q \cdot \xi + \Bar{Q} \cdot \Bar{\xi}, Q \cdot \beta + \Bar{Q} \cdot \Bar{\beta}\right], \phi \big] \equiv [\mathcal{O}, \phi]
+    \label{eqn:6:SUSY transformation commutator relation boson}
+\end{equation}
+
+Expanding the LHS of Equation \ref{eqn:6:SUSY transformation commutator relation boson} for a boson,
+\begin{eqnarray}
+    \left[\delta_\beta, \delta_\xi\right] \phi &=& -i (\xi^\dagger \Bar{\sigma}^\mu \beta - \beta^\dagger \xi) \partial_\mu \phi \nonext
+    &=& (\xi^T \sigma^2 \sigma^\mu \sigma^2 \beta^*  - \beta^T \sigma^2 \sigma^\mu \sigma^2 \xi^*) [P_\mu, \phi] \nonext
+    \therefore \mathcal{O} &=& (\xi^T \sigma^2 \sigma^\mu \sigma^2 \beta^*  - \beta^T \sigma^2 \sigma^\mu \sigma^2 \xi^*) P_\mu \nonext
+    &=& -(\sigma^2)^{ab} (\sigma^2)^{cd} (\xi_b \beta^*_d \sigma^\mu_ac + \xi^*_b \beta_d \sigma^\mu_{ca}) P_\mu
+\end{eqnarray}
+
+Comparing against the coefficients in Equations \ref{eqn:6:charge and commutator relation}, we will arrive at the following anti-commutator relations:
+\begin{eqnarray}
+    \{Q_a, Q_c\} &=& \{Q_a^\dagger, Q_c^\dagger\} = 0
+    \nonext
+    \{Q_a, Q_c^\dagger\} &=& \sigma^\mu_{ac} P_\mu\nonext
+    \{Q_a^\dagger, Q_c\} &=& \sigma^\mu_{ca} P_\mu\nonumber
+    \label{eqn:6:susy algebra}
+\end{eqnarray}
+and by normalising the charges, $Q \rightarrow Q/\sqrt{2}$, the non-vanishing anti-commutator relations are
+\begin{eqnarray}
+    \{Q_a, Q_c^\dagger\} &=& 2 \sigma^\mu_{ac} P_\mu \\
+    \label{eqn:6:susy algebra 1}
+    \{Q_a^\dagger, Q_c\} &=& 2 \sigma^\mu_{ca} P_\mu 
+    \label{eqn:6:susy algebra 2}
+\end{eqnarray}
+
+Note that since $Q$ and $\Bar{Q}$ are spacetime independent, the algebra between the momentum Poincar\'{e} charges and supersymmetric charges necessarily vanish.
+\begin{equation}
+    [Q, P_\mu] = [Q^\dagger, P_\mu] = 0
+\end{equation}
+
+However, the angular Poincae\'{e} charges and supersymmetric charges do not vanish. 
+\begin{equation}
+    [Q_a, M_{\mu\nu}] = (\sigma_{\mu\nu})^b_a Q_b \quad , \quad \sigma_{\mu\nu} \equiv \frac{i}{4} (\sigma_\mu \Bar{\sigma}_\nu - \sigma_\nu \Bar{\sigma}_\mu)
+\end{equation}
+
+If we were to conclude that the algebra for SUSY is complete with this, we would be sorely mistaken as it does not close for the spinor fields as they are now. This is simply because the spinor fields we have are on-shell spinors with a total of 2 degrees of freedom, 2 short of the bosonic degrees of freedom. To handle this, we will have to introduce auxiliary fields that will vanish on-shell while accounting for the missing 2 degrees of freedom. We will allow the auxiliary fields to be bosonic. Since they must vanish on-shell, the simplest form they can take is $F^\dagger F$. Naturally, the dimension for the auxiliary field has to be 2 in the Lagrangians we have been working in. The free field Lagrangian is now:
+
+\begin{equation}
+    \mathcal{L} = \partial_\mu \phi^\dagger \partial^\mu \phi + \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi + F^\dagger F
+    \label{eqn:6:new lagrangian}
+\end{equation}
+
+The explicit transformation rule of $F$ needs to be linear in the infinitesimal $\xi$ and one other field, all while ensuring its dimension and Lorentz invariance. The right choice of $\delta F$ is
+\begin{equation}
+    \delta F = K \xi^\dagger \Bar{\sigma}^\mu\partial_\mu\chi
+\end{equation}
+
+To ensure that this addition of the auxiliary field to the Lagrangian will not interfere with the overall invariance, we have to apply a variance on the fields.
+\begin{equation}
+    \delta(F^\dagger F) = (K^* \xi F)^\dagger \Bar{\sigma}^\mu \partial_\mu \chi - \chi^\dagger \Bar{\sigma}^\mu \partial_\mu (K^* \xi F)
+    \label{eqn:6:auxiliary fields variance}
+\end{equation}
+Noticing that this is similar in structure to the variance of the free spinor fields in Equation \ref{eqn:6:free spinor fields variance}, we can define a new spinor field as in Equation \ref{eqn:6:new spinor field}.
+\begin{equation}
+    \delta(\chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi) = (\delta \chi)^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi + \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu (\delta\chi)
+    \label{eqn:6:free spinor fields variance}
+\end{equation}
+
+\begin{equation}
+    \delta \Tilde{\chi} \equiv \delta \chi - i K^* \xi F
+    \label{eqn:6:new spinor field}
+\end{equation}
+
+Because of the freedom we have for K, we can conveniently set it to $i$. This way, our new Lagrangian in Equation \ref{eqn:6:new lagrangian} will be closed under the SUSY algebra in Equations \ref{eqn:6:susy algebra 1} and \ref{eqn:6:susy algebra 2} with the following field super-transformations:
+\begin{eqnarray}
+    \delta \phi &=& \xi \cdot\chi \nonext
+    \delta \chi &=& - i \sigma^\mu (i \sigma^2 \xi^*) \partial_\mu \phi + F\xi \nonext
+    \delta F &=& -i \xi^\dagger \Bar{\sigma^\mu} \partial_\mu \chi \nonumber
+\end{eqnarray}

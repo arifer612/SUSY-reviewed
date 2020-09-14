@@ -1,0 +1,164 @@
+\chapter{Applications of SUSY algebra}
+\label{ch:7}
+Continuing off the previous chapter, we will work on the SUSY algebra to create the SUSY multiplets. We will also formulate the algebra again, but in the Majorana form to see the significance of its interpretation over the Weyl spinor representation. We will then attempt to find the explicit forms of the supercharges both as symmetry currents and quantum filed operators. Lastly, we will discuss about the extension of the algebra into areas outside of SUSY.
+
+\section{Casimir Operators}
+\label{ch:7:casimir operator}
+The Casimir operators are operators which commute with every generator of a group. Because of that, its eigenvalues can be used to classify the group representations. For example, $P^\mu P_\mu$ is a Casimir operator of the Poincar\'{e} group with an eigenvalue $m^2$. Another (more useful) Casimir operator of the Poincar\'{e} group is the Pauli-Lubonski operator $W^\mu$.
+\begin{equation}
+    W^\mu \equiv \frac{1}{2} \varepsilon^{\mu \nu \sigma \rho} M_{\rho\sigma} P_\nu
+\end{equation}
+
+For a massive particle, the Pauli-Lubonski operator gives the total angular momentum of a particle as its eigenvalue.
+\begin{equation}
+    W^i\ket{p} = m(L^i + S^i)\ket{p}
+\end{equation}
+
+Contracting it with itself and applying onto a particle at rest,
+\begin{equation}
+    W_\mu W^\mu \ket{p} = -m^3 s(s+1) \ket{p}
+\end{equation}
+
+On the other hand, on a massless particle, the eigenvalue of the Pauli-Lubonski operator is the helicity of the particle. Take for example a massless particle in with an angle of rotation in the z-axis (i.e. $P^\mu \ket{p} = (E, 0, 0, E) \ket{p}$).
+\begin{equation}
+    W^\mu \ket{p}  = (Es_z, 0, 0, Es_z) \ket{p}
+\end{equation}
+
+\section{Applying onto supercharges}
+\label{ch:7:applying onto supercharges}
+Applying the Pauli-Lubonski operator to the supercharges in a commutator relation,
+\begin{equation}
+    [Q_a, W^0] = - \frac{1}{2} (\sigma^3)^b_a Q_b P_3
+\end{equation}
+The only non-zero terms of $\sigma^3$ are the diagonal terms so what we essentially have is:
+\begin{eqnarray}
+    \left[ Q_1, W_0\right] &=& - \frac{1}{2}Q_1 P_3 \\
+    \left[ Q_2, W_0\right] &=& \frac{1}{2}Q_2 P_3
+\end{eqnarray}  
+
+We can use this to derive what the supercharges do onto a particle state.
+\begin{eqnarray}
+    W_0(Q_1\ket{p, h}) &=& [W_0, Q_1] \ket{p,h} + Q_1W_0\ket{p,h} \nonext
+    &=& E(h+\frac{1}{2}) Q_1 \ket{p,h} \nonext
+    \implies Q_1 \ket{p,h} &=& \ket{p, h+\frac{1}{2}}
+    \label{eqn:7:q1 supercharge}
+\end{eqnarray}
+Likewise for $Q_2$:
+\begin{equation}
+    Q_2 \ket{p,h} = \ket{p, h-\frac{1}{2}}
+    \label{eqn:7:q2 supercharge}
+\end{equation}
+
+From Equations \ref{eqn:7:q1 supercharge} and \ref{eqn:7:q2 supercharge}, we now know that $Q_1$ raises the helicity of the particle by $\frac{1}{2}$ whereas $Q_2$ lowers the helicity of the particle by $\frac{1}{2}$.
+
+\section{Building the SUSY multiplets}
+Let us look at the massless, rest particle. Recalling the SUSY algebra in Equation \ref{eqn:6:susy algebra}, the algebra all depend on $\sigma^\mu_{ab}P_\mu$.
+\begin{equation}
+    \sigma^\mu_{ab} P_\mu =
+    \begin{pmatrix}
+        0 & 0 \\ 0 & 2P^0
+    \end{pmatrix} \ket{p,h}
+\end{equation}
+
+Thus, the only non-vanishing algebra is
+\begin{equation}
+    \{Q_2, Q_2^\dagger\} = 2 E \ket{p,h}
+\end{equation}
+
+The vanishing algebra also sheds some insight into the inner workings of the multiplet.
+\begin{equation}
+    \{Q_1, Q_1^\dagger\} = 0 \implies Q_1\ket{p,h} = Q_1^\dagger \ket{p,h} = 0
+\end{equation}
+This means that in SUSY multiplet, there is a minimum helicity to consider!
+
+Let us define the minimum helicity $h_{min}$
+\begin{equation}
+    Q_2\ket{p, h_{min}} = 0 \quad , \quad Q_2^\dagger\ket{p, h_{min}} = \ket{p, h_{min} + \frac{1}{2}}
+\end{equation}
+
+Moreover,
+\begin{equation}
+    \{Q_2^\dagger, Q_2^\dagger\} = 0 \implies Q_2^\dagger Q_2^\dagger \ket{p, h_{min}} = 0
+\end{equation}
+this implies that the multiplet has only 2 states of the same momentum, but a helical difference of $1/2$.
+
+To make the duet CPT invariant, we need to add the CPT conjugates of each of the 2 states. Thus, there needs to be 4 states to a SUSY multiplet. For example, if $h_{min} = 0$, we will have a scalar multiplet with helicities $0, 0, \frac{1}{2}, -\frac{1}{2}$; if $h_{min} = \frac{1}{2}$, we will have a vector multiplet with helicities $\frac{1}{2}, 1, -\frac{1}{2}, -1$.
+
+\section{Supercharges through symmetry currents}
+\label{ch:7:supercharges through symmetry currents}
+
+The general Lagrangian made of complex scalar fields is:
+\begin{equation}
+    \mathcal{L} = \mathcal{L}(\phi, \phi^\dagger, \partial_\mu \phi, \partial_\mu \phi ^\dagger)
+\end{equation}
+
+The variance of the Lagrangian is:
+\begin{equation}
+    \delta \mathcal{L} = \diff{\mathcal{L}}{\phi} \delta \phi + \diff{\mathcal{L}}{\phi^\dagger} \delta \phi^\dagger + \diff{\mathcal{L}}{(\partial_\mu \phi)} \delta (\partial_\mu \phi) + \diff{\mathcal{L}}{(\partial_\mu \phi^\dagger)}
+\end{equation}
+where on-shell, 
+\begin{equation}
+    \diff{\mathcal{L}}{\phi} = \partial_\mu \diff{\mathcal{L}}{\partial(\partial_\mu \phi)}
+\end{equation}
+giving us
+\begin{equation}
+    \partial_\mu \mathcal{K^\mu} \equiv \delta \mathcal{L} = \partial_\mu \left[ \diff{\mathcal{L}}{(\partial_\mu \phi)} \delta \phi + \diff{\mathcal{L}}{(\partial_\mu \phi^\dagger)} \delta \phi^\dagger \right]
+\end{equation}
+where $\mathcal{K^\mu}$ is introduced as we know that in general, the variance of the Lagrangian can total differential as it will disappear in the integral. The terms in the bracket are the Noether's current, denoted by $j^\mu$. The conserved current $J^\mu$ is thus defined as:
+\begin{equation}
+    J^\mu = j^\mu - K^\mu
+    \label{eqn:7:symmetry current}
+\end{equation}
+
+The supercharges are derived using the 0-th index of $J^\mu$ as in Equation \ref{eqn:6:charge as symmetry current}.
+
+\section{VEV of the Hamiltonian}
+\label{ch:7:vev of hamiltonian}
+From
+\begin{equation}
+    \{Q_a, Q_b^\dagger\} = \sigma^\mu P_\mu \implies \braket{\{Q_1, Q_1^\dagger\} + \{Q_2, Q_2^\dagger\}} = 2 \braket{\mathcal{H}}
+\end{equation}
+
+The positive-definitivity of the LHS implies that $\braket{\mathcal{H}} \geq 0$. The equality is achieved when both supercharges annihilate the vacuum state, and by extension, a strict inequality is enforced when the supercharges do not annihiliate the vacuum state -- spontaneous supersymmetry breaking.
+
+\section{SUSY in the Majorana Form}
+\label{ch:7:susy in majorana form}
+
+Recall that the right chiral spinor of the Majorana spinor is related to its left chiral spinor as $\eta = i \sigma^2 {\chi^\dagger}^T$. This means that all 4 components of the Majorana supercharge can be expressed as
+\begin{eqnarray}
+    Q_M &\equiv& \col{i \sigma^2 {Q^\dagger}^T}{Q} = \begin{pmatrix} -Q_2^\dagger \\ -Q_1^\dagger \\ Q_1 \\ Q_2 \end{pmatrix}
+\end{eqnarray}
+
+\section{Explicit supercharges}
+\label{ch:7:explicit supercharges}
+In Equations \ref{eqn:6:charge as symmetry current}, we saw how to obtain the supercharges explicitly using the conserved symmetry current. To get the expression for the conserved symmetry current, we need the Noether's current ($j^\mu$) and the surface differential terms that might have been `discarded' in the derivation of the Lagrangian ($\partial_\mu K^\mu$). 
+
+For example, in the free supersymmetric Lagrangian
+\begin{equation}
+    \mathcal{L} = \partial_\mu \phi^\dagger \partial^\mu \phi + \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi + F^\dagger F
+    \label{eqn:7:free lagrangian}
+\end{equation}
+its conserved current is
+\begin{equation}
+    \mathcal{J}^\mu_{SUSY} = (\partial_\nu \phi) \chi^\dagger \Bar{\sigma}^\mu \sigma^\nu (i\sigma^2) \xi^* - (\partial_\nu \phi^\dagger) \xi^T (i\sigma^2) \sigma^\nu \Bar{\sigma}^\mu \chi
+    \label{eqn:7:conserved current}
+\end{equation}
+
+Putting Equation \ref{eqn:7:conserved current} into Equation \ref{eqn:6:charge as symmetry current}, we get
+\begin{equation}
+    \xi\cdot Q + \Bar{\xi} \cdot \Bar{Q} = \int \td^3 x (\partial_\nu \phi) \chi^\dagger \Bar{\sigma}^\mu \sigma^\nu (i\sigma^2) \xi^* - (\partial_\nu \phi^\dagger) \xi^T (i\sigma^2) \sigma^\nu \Bar{\sigma}^\mu \chi
+\end{equation}
+
+Comparing the coefficients of $\xi$ and $\xi^*$,
+\begin{eqnarray}
+    Q = \int \td^3 x \partial_\nu \phi^\dagger \sigma^\nu \Bar{\sigma}\mu \chi \\
+    Q^\dagger = \int \td^3 x \chi^\dagger \Bar{\sigma}^\mu \sigma^\nu \partial_\nu \phi^\dagger
+\end{eqnarray}
+
+Two more identities that need to be included when using the explicit charges are
+\begin{eqnarray}
+    \left[ \phi(x,t), \Dot{\phi}^\dagger(y,t)\right] &=& i \delta^3(x-y) \\
+    \left\{ \chi_a(x,t) , \chi_b^\dagger(y,t)\right\} &=& \delta_{ab} \delta^3(x-y)
+\end{eqnarray}
+
+With these 4 equations, the explicit supercharges may be used freely in applications such as verifying the field transformations.
