@@ -1,0 +1,84 @@
+\chapter{Some explicit calculations}
+\label{ch:9}
+
+Here, we will carry out some explicit calculations on the Wess-Zumino model and explicitly show the most desirable trait of supersymmetry -- the vanishing quadratic divergences. The calculations carried out will be diagram calculations in QFT and will be briefly covered in the first section. Afterwards, we will apply those onto the interacting Lagrangians in Chapter \ref{ch:8} Section \ref{ch:8:wess-zumino lagrangian in majorana form}. Lastly, we will discuss the renormalisability of the theory to handle the logarithmic divergences that do not vanish like the quadratic divergences. 
+
+\section{Quick overview of QFT process calculation}
+\label{ch:9:quick overview of qft process calculation}
+We will be working the calculations on n-point functions. This is where we will have calculations such as
+\begin{equation}
+    \braket{\Omega|T(\phi(x)\phi(y)..)|\Omega} = \frac{\Braket{0|T\left(\phi_1(x)\phi_2(y)...\exp\left[i\int\td^4z \mathcal{L}_{int}\phi_I(z)\right]\right)|0}}{\Braket{0|T\lc\exp\left[i\int\td^4z \mathcal{L}_{int}\phi_I(z)\right]\rc|0}}
+\end{equation}
+
+Several important results are the 2-point functions of scalar fields in the $\lambda\phi^4$ theory:
+\begin{equation}
+    \Braket{0|\phi(x)\phi(y)|0} = D(x-y) + \mathcal{O}(\lambda)
+\end{equation}
+where
+\begin{eqnarray}
+    D(x-y) &=& \int \frac{\td^4 k}{(2\pi)^4} \exp[-ik\cdot(x-y)] \frac{i}{k^2 - m^2 + i\varepsilon} \nonext
+    &\equiv& \int \frac{\td^4 k}{(2\pi)^4} \exp[-ik\cdot(x-y)] D(k)
+\end{eqnarray}
+
+To order $\lambda$ of the same theory, we have another result:
+\begin{eqnarray}
+    D_1(x-y) &\equiv& -i \lambda \Braket{0|T\lc\phi(x)\phi(y)\int\td^4z\phi^4(z) \rc|0} \nonext
+    &=& -12i \lambda \int \td^4 z \Braket{0|[\phi(x)\sim\phi(z)][\phi(y)\sim\phi(z)][\phi(z)\sim\phi(z)]|0} \nonext
+    &=& -12i \lambda \int \td^4 z D(x-z)D(y-z)D(z-z) \label{eqn:9:single loop interaction}\\
+    &=& -12i \lambda \int \frac{\td^4 p}{(2\pi)^4} e^{-ip\cdot(x-y)} D(p)D(p)\int\frac{\td^4 q}{(2\pi)^4} \frac{i}{q^2-m^2+i\varepsilon}
+    \label{eqn:9:single loop interaction before fourier transformation}
+\end{eqnarray}
+The diagram of such an interaction visualised from Equation \ref{eqn:9:single loop interaction} is a loop at point $z$ with ends at $x$ and $y$. If we Fourier transform the LHS to the $p$-momentum space, we can match it to Equation \ref{eqn:9:single loop interaction before fourier transformation} and see that
+\begin{equation}
+    \mathcal{F}\left\{\int\td^4 z D(x-z)D(y-z)D(z-z)\right\} = D(p)D(p)I_d
+    \label{eqn:9:single loop interaction after fourier transformation}
+\end{equation}
+for 
+\begin{eqnarray}
+    I_d &\equiv& \int_0^\Lambda \frac{\td^4 q}{(2\pi)^4} \frac{i}{q^2 - m^2 + i\varepsilon} \nonext
+    &\approx& \frac{1}{8\pi^2} \left[ \Lambda^2 - m^2 \ln\lc\frac{\Lambda}{m}\rc - c\right]
+    \label{eqn:9:single loop Id}
+\end{eqnarray}
+where we see the quadratic and logarithmic terms all together, with a finite $c$. The common technique to work with these is to amputate $D(p)$ from Equation \ref{eqn:9:single loop interaction after fourier transformation} to get the divergences
+\begin{equation}
+    D_1^{Am}(p) = -12i \lambda I_d
+\end{equation}
+
+As for Majorana spinors,
+\begin{eqnarray}
+    \Braket{0|T\lc\Psi^M_\alpha(x) \Bar{\Psi}^M_\beta(y)\rc|0} &=& \int\frac{\td^4 k}{(2\pi)^4} e^{-ik\cdot(x-y)} S_{\alpha\beta}(k)
+\end{eqnarray}
+where
+\begin{equation}
+    S_{\alpha\beta} \equiv i \frac{(\slashed k + m)_{\alpha\beta}}{k^2 - m^2 + i \varepsilon}
+\end{equation}
+
+With $(\Psi^M)^C = C \Bar{\Psi}^{M^T}$ and $C^2 = - \mathbb{1}$,
+\begin{equation}
+    \Braket{0|T\lc\Psi^M_\alpha(x)\Psi^M_\beta(y)\rc|0} = \int\frac{\td^4 k}{(2\pi)^4} e^{-ik\cdot(x-y)} S_{\alpha\beta}(k) C_{\gamma\beta}^T
+\end{equation}
+\begin{equation}
+    \Braket{0|T\lc\bar{\Psi}^M_\alpha(x)\bar{\Psi}^M_\beta(y)\rc|0} = \int\frac{\td^4 k}{(2\pi)^4} e^{-ik\cdot(x-y)} C_{\alpha\gamma}^T S_{\gamma\beta}(k) 
+\end{equation}
+
+\section{Explicit calculations on the Wess-Zumino model}
+\label{ch:9:explicit calculations on the wess-zumino model}
+Now that we have covered the necessary, let us apply them onto the Wess-Zumino model. For the interacting Lagrangian in the exponential of the n-point function, we will use the interacting Lagrangian of the Wess-Zumino model, $\mathcal{L}_{int} = \mathcal{L}_1 + \mathcal{L}_2 + \mathcal{L}_3 + \mathcal{L}_4$. What we are interested in is to see that all the terms vanish except for the logarithmic divergence. For that, we will be grouping the coefficients of of the terms after the calculations and adding them together.
+
+\subsection{Single $A$ field propagator}
+The non-vanishing contributions of having an $A$ field particle propagate in the Wess-Zumino model is to the order of $g$. 
+\begin{equation}
+    \Braket{\Omega|T(A(x))|\Omega} = -ig \int \td^4 z \Braket{0|T\left\{A(x) \lc mA^3(z) + mA(z)B^2(z) + A(z)\bar{\Psi}\Psi \rc\right\}|0}
+\end{equation}
+Carrying out the calculation (amputating the $D(p)$ terms to make it easier), we would see that the coefficient of $I_d$ for the $A$ field propagator vanishes!
+
+\subsection{Double $B$ field propagator}
+There is no contribution with a 1st order of $g$ because every term in $\mathcal{L}_{int}$ to order $g$ has an odd number of $A$ field, and the VEV will naturally vanish. So the terms to consider are the terms with $g$ to the 0th order and 2nd order. 
+\begin{eqnarray}
+    && \Braket{\Omega|T\lc B(x)B(y)\rc|\Omega} \nonext
+    &=& D_B(x-y) - \int\td^4z\int\td^4w \Braket{0|T\lc B(x)B(y) \mathcal{L}_1 \rc|0} \nonext
+    && - \frac{1}{2} \int\td^4z\int\td^4w \Braket{0|T\lc B(x)B(y) (\mathcal{L}_2 + \mathcal{L}_3 + \mathcal{L}_4)(z)(\mathcal{L}_2 + \mathcal{L}_3 + \mathcal{L}_4)(w) \rc|0} \nonext
+\end{eqnarray}
+Carrying out the calculation (and amputating the $D(p)$ terms to make it easier), we yet again see that the coefficients of $I_d$ vanishes! However, there is a remnant term that carries a logarithmic divergence. It is at this point where we should take a step back and allow the flow of things to work on as it can be shown that with a renormalisation of the fields, this logarithmic divergence will too, vanish.
+
+This is the power of SUSY that appeals to the theoretical side of particle physicists. The simple and elegant removal of the ugly divergences that plagues the most successful theory to date.

@@ -1,0 +1,169 @@
+\chapter{The Wess-Zumino Model}
+\label{ch:8}
+
+Up to this point, we have explicitly formulated the Lagrangian of free particles. We realised that for the SUSY algebra to be complete for both the boson and spinor fields, we needed to introduce a new field that disappears on-shell. In this chapter, we will look into adding some interactions between the fields so as to bring our discussions away from the toy model that it is right now. We will interactions between all 3 fields and their hermitian conjugates. Once our new Lagrangian is complete, we will be able to employ some tricks that is used widely in Lagrangian mechanics and identify an umbrella potential term that will be useful in our future attempt to break the symmetry. Lastly, as we did for the past few chapters, we will express the Lagrangian in the Majorana spinor representation.
+
+\section{Interactions to consider}
+\label{ch:8:interactions to consider}
+We now have a total of 6 fields: $\phi, \phi^\dagger, F, F^\dagger, \chi, \chi^\dagger$. We will only be considering interactions that will satisfy the following constraints in the Lagrangian:
+\begin{enumerate}
+    \item $D\leq4$
+    \item Lorentz invariance
+    \item Hermitivity
+    \item Gauge invariance
+\end{enumerate}
+
+We can exclude the 4th option for now since we are working without a gauge charge in this model, but in general these are the constraints in picking possible interactions for a super-renormalisable theory.
+
+\subsection{$\phi$ and $\phi^\dagger$ interactions only}
+Any arbitrary function $G(\phi, \phi^\dagger)$ will satisfy all 3 conditions.
+
+\subsection{$\phi$, $\phi^\dagger$, $F$, and $F^\dagger$ interactions}
+A function with the form $W_1(\phi, \phi^\dagger) F + h.c.$ will satisfy all 3 conditions. Note that $W_1$ is at most quadratic or bilinear in terms.
+
+\subsection{$\phi$, $\phi^\dagger$, $\chi$, and $\chi^\dagger$ interactions}
+To get Lorentz invariant terms of the spinors, we make use of what we have done in Chapter \ref{ch:2}. $\chi\cdot\chi$ and $\Bar{\chi}\cdot\Bar{\chi}$ are Lorentz invariants. Possible interactions of this group come in the form $-\frac{1}{2} W_{11} (\phi, \phi^\dagger) \chi\cdot\chi + h.c.$. Note that $W_{11}$ is at most linear in terms.
+
+\subsection{$\chi$, $\chi^\dagger$, $F$, and $F^\dagger$ interactions}
+Any Lorentz invariant combinations of these terms will necessarily violate the first condtion, and thus we need no consider any of these interactions for the Wess-Zumino model.
+
+The indices of $W_1$ and $W_{11}$ do not make sense now, but by the end we will see that they are indices of the fields they are attached to -- $F_i$ and $\chi_i\cdot\chi_j$.
+
+\section{The General Wess-Zumino Lagrangian}
+Let us put in the interactions we have guessed in the previous section.
+\begin{equation}
+    \mathcal{L}_{WZ} = \partial_\mu \phi^\dagger \partial^\mu\phi + \chi^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi + F^\dagger F + G + W_1 F + W_1^\dagger F^\dagger - \frac{1}{2} W_{11} \chi\cdot\chi - \frac{1}{2}W_{11}^\dagger \Bar{\chi}\cdot\Bar{\chi}
+    \label{eqn:8:general wess-zumino lagrangian}
+\end{equation}
+
+We now need $\mathcal{L}_{int}$ to transform supersymmetrically, as $\mathcal{L}_{free}$ did. We will do this by varying $\mathcal{L}_{int}$ and using the supersymmetric transformation rules as in Equations \ref{eqn:6:supersymmetric field transformations}, ensure that the total variance either vanishes or gets swept away as a total derivative.
+
+Doing the work, we will see that
+\begin{eqnarray}
+    \delta\mathcal{L}_{int} &=& \diff{G}{\phi}\chi\cdot\xi + \diff{W_1}{\phi}\chi\cdot\xi F + \diff{W_1}{\phi^\dagger}\Bar{\chi}\cdot\Bar{\xi}F - i W_1 \xi^\dagger \Bar{\sigma}^\mu \partial_\mu \chi \nonext
+    && - \frac{1}{2} \diff{W_{11}}{\phi} \chi \cdot\xi \chi\cdot\chi - \frac{1}{2}\diff{W_{11}}{\phi^\dagger} \Bar{\chi}\cdot\Bar{\xi} \chi \cdot \chi \nonext
+    && - i W_{11} \chi^T i \sigma^2 \partial_\mu \phi \sigma^\mu i \sigma^2 \xi^* - W_{11} F \chi \cdot \xi + h.c.
+    \label{eqn:8:wess-zumino lagrangian variance}
+\end{eqnarray}
+
+We see that for this to either vanish or gauge away as a total derivative, coefficients of the combinations of fields need to either vanish or gauge away as a total derivative. This gives us the following constraints:
+\begin{equation}
+    \chi \cdot \xi \neq 0 \implies \diff{G}{\phi} = 0
+    \label{eqn:8:G diff}
+\end{equation}
+\begin{equation}
+    \Bar{\chi}\cdot\Bar{\xi} \chi\cdot\chi\neq 0 \implies \diff{W_{11}}{\phi^\dagger} = 0
+    \label{eqn:8:W_11 phi dagger diff}
+\end{equation}
+\begin{equation}
+    \Bar{\chi}\cdot\Bar{\xi} F \neq 0 \implies \diff{W_1}{\phi^\dagger} = 0
+    \label{eqn:8:W_1 phi dagger diff}
+\end{equation}
+\begin{equation}
+    \chi\cdot\xi\chi\cdot\chi = 0 \implies \diff{W_{11}}{\phi} \text{ has no constraints}
+    \label{eqn:8:W_11 phi diff}
+\end{equation}
+\begin{equation}
+    \chi \cdot \xi F \neq 0 \implies \diff{W_1}{\phi} - W_{11} = 0
+    \label{eqn:8:W_1 and W_11 relation}
+\end{equation}
+\begin{equation}
+    \chi^T (i \sigma^2) \sigma^\mu (i \sigma^2) \xi^* \neq 0 \implies \partial_\mu W_1 = W_{11} \partial_\mu \phi
+    \label{eqn:8:W_1 and W_11 relation partial}
+\end{equation}
+and all their hermitian conjugates.
+
+We have to note that $G$ is real, so Equation \ref{eqn:8:G diff} tells us that $G$ is a constant that we can conveniently set to 0. Equations \ref{eqn:8:W_11 phi dagger diff} and \ref{eqn:8:W_1 phi dagger diff} tells us that $W_{1}$ and $W_{11}$ are holomorphic in $\phi$ (i.e. $W_1 = W_1(\phi)$ and $W_{11} = W_{11}(\phi)$). The final 2 equations, Equations \ref{eqn:8:W_1 and W_11 relation} and \ref{eqn:8:W_1 and W_11 relation partial} are identical to each other -- $W_{11} = \diff{W_1}{\phi}$. Equation \ref{eqn:8:W_11 phi diff} tells us that $W_{11}$ is the only degree of freedom we have.
+
+With these, we can now write the interaction Lagrangian as
+\begin{equation}
+    \mathcal{L}_{int} = W_1(\phi) F - \frac{1}{2} \diff{W_1}{\phi} \chi\cdot\chi + h.c.
+\end{equation}
+
+To have this Lagrangian satisfy $D \leq 4$, $[W_1] \leq 2$, which means that $W_1$ is at most quadratic in $\phi$. Its most general form is
+\begin{equation}
+    W_1 = m \phi + \frac{1}{2} y \phi^2 + C
+\end{equation}
+where $y$ is a dimensionless constant.
+
+Here, we take a page off classical Lagrangian mechanics. The interaction Lagrangian may be written a a derivative the derivative of a potential term, for which we will label as $\mathcal{W}$.
+\begin{equation}
+    \mathcal{W} = \frac{1}{2} m \phi^2 + \frac{1}{6}y \phi^3 + C\phi + f(\phi^\dagger)
+\end{equation}
+
+The notation so far is complete for the 1 particle Wess-Zumino interaction, where we need not worry about particle indices and can leave all the indices at $1$ or $11$. If we were to extend this to $n$-particles however, we have to make a slight correction.
+
+\begin{eqnarray}
+    \mathcal{L}_{WZ} &=& \sum_{i} \partial_\mu \phi^\dagger_i \partial^\mu \phi_i + \chi_i^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi_i + F_i^\dagger F_i \nonext
+    &&+ \left(\sum_{i,j} W_i F_i - \frac{1}{2} W_{ij}\chi_i\cdot\chi_j + h.c.\right)
+    \label{eqn:8:wess-zumino lagrangian for n particles}
+\end{eqnarray}
+
+Going through the process again, we will see that $W_{ij}$ has to be at most linear in $\phi$. Its most general form has to be
+\begin{equation}
+    W_{ij} = m_{ij} + y_{ijk}\phi_k
+\end{equation}
+and for us to arrive at this, we had to impose that $\diff{W_{ij}}{\phi_k}$ is cyclic invariant, which then implies that $y_{ijk}$ also needs to have cyclic symmetry. $\chi_i\cdot\chi_j$ is symmetric in indices so $m_{ij}$ also has to be symmetric in indices. Therefore, we have found that $W_{ij}$ is completely symmetric. One simply way to ensure its symmetricity is to have $W_{ij}$ be a second order differential of a function.
+\begin{equation}
+    W_{ij} = \diff{^2\mathcal{W}}{\phi_i \partial\phi_j}
+\end{equation}
+
+With the other constraints that $W_i$ also having to be holomorphic in $\phi_i$ and that $W_i = \diff{\mathcal{W}}{\phi_i}$, the most general form $\mathcal{L}$ can take is:
+\begin{equation}
+    \mathcal{W} = \frac{1}{2}m_{ij}\phi_i \phi_j + \frac{1}{6}y_{ijk}\phi_i\phi_j\phi_k + c_i \phi_i
+\end{equation}
+
+Now, we can organise Equation \ref{eqn:8:wess-zumino lagrangian for n particles} in terms of the superpotential $\mathcal{W}$ so that it would be easier to see the physics.
+\begin{eqnarray}
+    \mathcal{L}_{WZ} &=& \sum_{i} \partial_\mu \phi^\dagger_i \partial^\mu \phi_i + \chi_i^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi_i + F_i^\dagger F_i \nonext
+    &&+ \left(\diff{\mathcal{W}}{\phi_i} W_i F_i + \frac{1}{2} \diff{^2\mathcal{W}}{\phi_i\partial\phi_j}\chi_i\cdot\chi_j + h.c.\right)
+    \label{eqn:8:wess-zumino lagrangian for n particles with superpotential}
+\end{eqnarray}
+
+Our Wess-Zumino Lagrangian is now completely supersymmetric! We can work a little more to remove the auxiliary fields from the Lagrangian solving their equations of motion (which we now for a fact is vanishing).
+\begin{equation}
+    F_i^\dagger F_i^\dagger = -\left\vert\diff{\mathcal{W}}{\phi_i}\right\vert^2
+\end{equation}
+
+\begin{equation}
+    \therefore \mathcal{L}_{WZ} = \partial_\mu \phi^\dagger_i \partial^\mu \phi_i + \chi_i^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi_i - \left\vert\diff{\mathcal{W}}{\phi_i}\right\vert^2 - \frac{1}{2}\left(\diff{^2\mathcal{W}}{\phi_i \partial_j}\chi_i\cdot\chi_j + h.c.\right)
+    \label{eqn:8:wess-zumino lagrangian for n particles without auxiliary fields}
+\end{equation}
+This form is a much more insightful than Equation \ref{eqn:8:wess-zumino lagrangian for n particles with superpotential} as here, all our terms are built off the physical boson and spinor fields. It also shows us exactly where the potential terms are in the Lagrangian as it comes very neatly in the form $\mathcal{L} = T - V$.
+
+Being explicit in Equation \ref{eqn:8:wess-zumino lagrangian for n particles without auxiliary fields}, the Lagrangian becomes
+\begin{eqnarray}
+    \mathcal{L}_{WZ} &=& \partial_\mu \phi_i^\dagger \partial^\mu \phi_i + \chi_i^\dagger i \Bar{\sigma}^\mu \partial_\mu \chi_i - \left\vert m_{ij} \phi_j + \frac{1}{2} y_{ijk}\phi_j\phi_k + c_i\right\vert^2 \nonext
+    && - \frac{1}{2} (m_{ij} \chi_i\cdot\chi_j + y_{ijk}\phi_k\chi_i\cdot\chi_j + h.c. )
+    \label{eqn:8:wess-zumino lagrangian expanded}
+\end{eqnarray}
+and we see that the masses of the bosons and spinors are the same!
+
+\section{The Wess-Zumino Lagrangian in Majorana Form}
+\label{ch:8:wess-zumino lagrangian in majorana form}
+Let us consider a single particle and set $c = 0$ Equation \ref{eqn:8:wess-zumino lagrangian expanded} becomes 
+\begin{eqnarray}
+    \mathcal{L}_{WZ} &=& \mathcal{L}_M + \partial_\mu \phi^\dagger \partial^\mu \phi - m^2 \phi^\dagger \phi - \frac{1}{2}my({\phi^\dagger}^2\phi + \phi^\dagger\phi^2) \nonext 
+    &&- \frac{1}{4}y^2(\phi^\dagger\phi)^2 - \frac{1}{2}y(\phi\chi\cdot\chi + \phi^\dagger\Bar{\chi}\cdot\Bar{\chi})
+    \label{eqn:8:wess-zumino lagrangian with majorana lagrangian}
+\end{eqnarray}
+
+We can decompose the complex scalar $\phi$ into its components $\phi = \frac{1}{\sqrt{2}}(A + i B)$ and express Equation \ref{eqn:8:wess-zumino lagrangian with majorana lagrangian} in terms of $A$, $B$, and $\Psi_M$. We will define $g \equiv \frac{1}{\sqrt{8}}y$ and the following terms will then be:
+\begin{equation}
+    -\frac{1}{4}y^2(\phi^\dagger \phi)^2 = -\frac{1}{2} g^2 (A^2 + B^2)^2 \equiv \mathcal{L}_1
+    \label{eqn:8:L1}
+\end{equation}
+\begin{equation}
+    -\frac{1}{2}my{\phi^\dagger}^2\phi + h.c. = - mg (A^3 + AB^2) \equiv \mathcal{L}_2
+    \label{eqn:8:L2}
+\end{equation}
+\begin{equation}
+    -\frac{1}{2}y(\phi\chi\cdot\chi + \phi^\dagger \Bar{\chi}\cdot\Bar{\chi}) = -g(A\Bar{\Psi}_M\Psi_M + iB\Bar{\Psi}_M\gamma^5\Psi_M) \equiv \mathcal{L}_3 + \mathcal{L}_4
+\end{equation}
+
+We now have
+\begin{equation}
+    \mathcal{L}_{WZ} = \mathcal{L}_{Free, WZ} + \mathcal{L}_1 + \mathcal{L}_2 + \mathcal{L}_3 + \mathcal{L}_4
+\end{equation}
+
+where the numbered Lagrangians will come in very handy when we do diagram calculations in the next chapter.
