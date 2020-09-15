@@ -1,0 +1,192 @@
+\chapter{Supersymmetric Gauge Theories}
+\label{ch:10}
+We shall now move towards the Standard Model by looking at imposing supersymmetry to gauge theories. We shall first attempt to do so for a $U(1)$ gauge theory before moving on to generalise for an $SU(N)$ gauge theory. At the end, we will attempt to make QED supersymmetric.
+
+\section{$U(1)$ gauge theory}
+\label{ch:10:u1 gauge theory} 
+For this theory, a vector multiplet is sufficient to illustrate the effects. We will use the vector multiplet that we have built earlier in Chapter \ref{ch:7} Section \ref{ch:7:applying onto supercharges}, $h = \{\pm 1/2, \pm 1\}$. Let us consider a photon field given by $A_\mu$ and its superpartner $\lambda$. The free Lagrangian for this theory is:
+\begin{equation}
+    \mathcal{L} = - \frac{1}{4} F_{\mu \nu}^{\mu \nu} + \lambda^\dagger i\Bar{\sigma}^\mu \partial_\mu \lambda
+    \label{eqn:10:u1 gauge theory:free lagrangian without auxiliary field}
+\end{equation}
+
+Since the field strength $F_{\mu \nu}$ is neutral in charge, so is $\lambda$. Because of that, there is no need for us to replace $\partial_\mu$ with a covariant derivative as the free Lagrangian is gauge invariant on its own.
+
+Let us determine the supersymmetric transformation rule of the fields. Since we want this to be a supersymmetric, we want $A_\mu$ to transform into $\lambda$ and back. Our first ansatz is 
+\begin{equation}
+    \delta A^\mu = \xi^\dagger \Bar{\sigma}^\mu \lambda + \lambda^\dagger \Bar{\sigma}^\mu \xi
+    \label{eqn:10:u1 gauge theory:photon field transformation rule ansatz}
+\end{equation}
+where by dimensional analysis, $[\xi] = -1/2$. 
+
+For the transformation rule of the photino, we need to ensure gauge invariance so we shall make use of the gauge invariant $F_{\mu\nu}$. Our ansatz is
+\begin{equation}
+    \delta \lambda = C F_{\mu \nu} \sigma^\mu \Bar{\sigma}^\nu \xi
+    \label{eqn:10:u1 gauge theory:photino transformation rule ansatz}
+\end{equation}
+where the know that $\sigma^\mu \Bar{\sigma}^\nu \xi$ is a proper rank 2 tensor. As $\lambda$ is a left chiral (by choice), $\xi$ also has to be left chiral.
+
+To determine the value of the constant $C$, we impose the invariance of the Lagrangian:
+\begin{equation}
+    \delta \left( -\frac{1}{4} F_{\mu\nu}F^{\mu\nu} \right) = -F_{\mu\nu}( \xi^\dagger \Bar{\sigma}^\nu \partial^\mu \lambda + \partial^\mu\lambda^\dagger \Bar{\sigma}^\nu \xi)
+    \label{eqn:10:u1 gauge theory:photon kinetic variance}
+\end{equation}
+\begin{equation}
+    \delta(i\lambda^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda) = i C` lambda^\dagger \Bar{\sigma}^\rho \partial_\rho F_{\mu\nu}\sigma^\mu \Bar{\sigma}^\nu \xi
+    \label{eqn:10:u1 gauge theory:photino kinetic variance}
+\end{equation}
+
+Putting them together,
+\begin{equation}
+    \delta\mathcal{L} = -F_{\mu\nu} \xi^\dagger \Bar{\sigma}^\nu \partial^\mu \lambda (1-2iC^*)
+\end{equation}
+which means that we should pick $C = i/2$.
+
+Now as we move on to include the auxiliary fields, we need to hold ourselves back from adding the same $F$ auxiliary fields that we had in the Wess-Zumino model. They are inherently different theories and so we need to treat them differently. For example, although $A_\mu$ also has 2 degrees of freedom on-shell, off-shell, it has 3. $\lambda$ has 2 degrees of freedom on-shell and 4 degrees of freedom off-shell. We see here that for the photon-photino multiplet, there is an absence of 1 degree of freedom. Therefore, our auxiliary field has to be of 1 degree of freedom, which means it has to be a real scalar field. The Lagrangian contribution is
+\begin{equation}
+    \mathcal{L}_{aux} = \frac{1}{2} D^2
+\end{equation}
+where we need to note that $D$ is inherently charge-less as well because of the total gauge invariance.
+
+Since $[D] = [F]$, we shall assume that it supersymmetrically transforms like $F$.
+\begin{equation}
+    \delta D = \partial_\mu \lc\xi^\dagger (-i\Bar{\sigma}^\mu) \lambda + h.c.\rc
+\end{equation}
+
+Since we see that $D$ is real, gauge-invariant, and transforms as a total derivative, we can add a linear term to the Lagrangian and not have it affect the overall invariance. This will come in handy when spontaneously breaking supersymmetry.
+\begin{equation}
+    \mathcal{L}_{FI} = \varsigma D
+\end{equation}
+
+To complete the algebra, we have to fix the transformation rule of the photino as we did in the Wess-Zumino model.
+
+In total, the free SUSY $U(1)$ gauge theory is
+\begin{equation}
+    \mathcal{L} = -\frac{1}{4}F_{\mu\nu}F^{\mu\nu} + i \lambda^\dagger \Bar{\sigma}^\mu \partial_\nu \lambda + \frac{1}{2} D^2 + \varsigma D
+    \label{eqn:10:u1 gauge theory:free lagrangian}
+\end{equation}
+with the following supersymmetric theories:
+\begin{eqnarray}
+    \delta A^\mu &=& \xi^\dagger \Bar{\sigma}^\mu \lambda + \lambda^\dagger \Bar{\sigma}^\mu \xi \nonext 
+    \delta \lambda &=& \frac{1}{2} i F_{\mu \nu} \sigma^\mu \Bar{\sigma}^\nu \xi + D \varsigma \label{eqn:10:u1 gauge theory:transformation rules}\\
+    \delta D &=& -i \xi^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda + i \partial_\mu \lambda^\dagger \Bar{\sigma}^\mu \xi \nonumber
+\end{eqnarray}
+
+\section{$SU(N)$ gauge theories}
+We shall now extend the work for $SU(N)$ gauge theories. Here, we shall seed the boson field $A_\mu$ (not necessarily the photon field from before) with a charge $g$. Because of that, our $\partial_\mu$ is now replaced by a covariant derivative.
+\begin{equation}
+    \partial_\mu \rightarrow D_\mu = \partial_\mu + ig A_\mu^a T_F^a
+\end{equation}
+where $T_F^a$ is the fundamental representation of the gauge theory.
+
+The $A$ field transforms in the fundamental representation as
+\begin{equation}
+    A_\mu \rightarrow A^\prime_\mu = UA_\mu U^\dagger + \frac{1}{g}(\partial_\mu U)U^\dagger
+\end{equation}
+and the covariant derivative transforms in the adjoint representation.
+\begin{equation}
+    D_\mu \psi \rightarrow D^\prime_\mu \psi^\prime = U D_\mu \psi
+\end{equation}
+
+To make the Dirac spinors gauge invariant, we use the covariant derivative instead of the normal partial derivative as well.
+
+Since the field strength of the gauge field is given by the following expression:
+\begin{equation}
+    F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu - ig [A_\mu, A_\nu]
+\end{equation}
+where $F_{\mu_\nu}$ is a matrix in the Lie algebra, we can find that $F_{\mu\nu}$ transforms in the fundamental representation.
+\begin{equation}
+    F_{\mu\nu} \rightarrow F_{\mu\nu}^\prime = U F_{\mu\nu} U^\dagger
+\end{equation}
+
+\section{QCD in Weyl spinors}
+\label{ch:10:qcd in weyl spinors}
+Using the information from the previous section, we can express QCD using Weyl spinors. The Lagrangian of a quark is given by
+\begin{eqnarray}
+    \mathcal{L}_{QCD} &=& \Bar{\Psi}_D (i\gamma^\mu D_\mu - m)\Psi_D \nonext
+    &=& \Bar{\Psi}_D (i\gamma^\mu \partial_\mu - g\gamma^\mu A_\mu - m) \Psi_D
+\end{eqnarray}
+where being $SU(3)$, $A_\mu = \frac{1}{2} \lambda^a A_\mu^a$.
+
+Properly changing expanding the equation, we get
+\begin{eqnarray}
+    \mathcal{L}_{QCD} &=& i \chi^\dagger_{\Bar{q}} \Bar{\sigma}^\mu \left[ \partial_\mu -\frac{1}{2} igA^a_\mu (\lambda^a)^*\right] \chi_{\Bar{q}} + i \chi^\dagger_q \Bar{\sigma}^\mu \left[ \partial_\mu +\frac{1}{2} igA^a_\mu (\lambda^a)^*\right] \chi_q \nonext
+    && - m(\chi_q\cdot\chi_{\Bar{q}} + \Bar{\chi}_{\Bar{q}}\cdot\Bar{\chi}_q)
+\end{eqnarray}
+where we see that the covariant derivative is different for $q$ and $\Bar{q}$, which means that they transform very differently and under nonequivalent representations. This is because the they have opposite charges!
+
+\section{Free Abelian Vector multiplet $\times$ Free chiral multiplet}
+\label{ch:10:free combination}
+Let us now try to combine what we have done for the free multiplets and introduce interactions to them. The chiral multiplet is the multiplet with $\chi$, $\phi$, and $F$. To couplet the multiplets together, we introduce a $U(1)$ charge to the chiral multiplet.
+\begin{equation}
+    X = \exp[i q \Lambda(x)] X
+\end{equation}
+where $X$ is any of the particles in the chiral multiplet.
+
+The free Lagrangian is now becomes
+\begin{equation}
+    \mathcal{L} = (D_\mu \phi)^\dagger (D^\mu \phi) + i \chi^\dagger \Bar{\sigma}^\mu D_\mu \chi + F^\dagger F - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i\lambda^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda + \frac{1}{2}D^2 + \varsigma D
+    \label{eqn:10:free abeleian x free chiral:new free lagrangian}
+\end{equation}
+where some interaction terms come when we expand the covariant derivative. These terms are
+\begin{equation}
+    \left(\mathcal{L}_{int}\right)_1 = iq \phi A^\mu \partial_\mu \phi^\dagger - iq \phi^\dagger A^\mu \partial_\mu \phi - q\chi^\dagger \Bar{\sigma}^\mu A_\mu \chi
+\end{equation}
+
+In finding new interaction terms, we need to ensure the 4 constraints of Chapter \ref{ch:8} Section \ref{ch:8:interactions to consider}. The need for gauge invariance greatly narrows the options and the only remaining terms are
+\begin{equation}
+    \left(\mathcal{L}_{int}\right)_2 = c_1 \left(\phi^\dagger \chi \cdot \lambda + h.c.\right) + c_2 \phi^\dagger \phi D
+\end{equation}
+
+Adding $\left(\mathcal{L}_{int}\right)_2$ to Equation \ref{eqn:10:free abeleian x free chiral:new free lagrangian}, we will have the general free abelian vector multiplet $\times$ free chiral multiplet Lagrangian. The transformation rules for each particle is that in their own theories in Equations \ref{eqn:6:supersymmetric field transformations} and \ref{eqn:10:u1 gauge theory:transformation rules}, except that we cannot have both of them use the same infinitesimal parameter $\xi$. The vector multiplet will have an infinitesimal parameter $a\xi$, where $a$ is a constant. 
+
+To determine the coefficients $a$, $c_1$, and $c_2$, we have to vary $(\mathcal{L}_{int})_1 + (\mathcal{L}_{int})_2$ and ensure that it either vanishes or gauges away as a total derivative, as what we did in Section \ref{ch:10:u1 gauge theory}. Going through the work, we will arrive at 
+\begin{equation}
+    a = -1 / \sqrt{2} \quad , \quad c_1 = -\sqrt{2} q \quad , \quad c_2 = -q
+\end{equation}
+
+However, now the auxiliary field does not close on its algebra. To fix this, we have to add some terms to the transformation rules of $F$ and $F^\dagger$.
+\begin{equation}
+    \delta F = -i \xi^\dagger \Bar{\sigma}^\mu D_\mu \chi + \sqrt{2}q \phi \Bar{\xi}\cdot\Bar{\lambda}
+\end{equation}
+where this means that the chiral auxiliary field transforms into spinors in the chiral and vector multiplets!
+
+All in all, our Lagrangian of the free abelian vector multiplet $\times$ free chiral multiplet now reads
+\begin{eqnarray}
+    \mathcal{L} &=& D_\mu \phi^\dagger D^\dagger \phi + i \chi^\dagger \Bar{\sigma}^\mu D_\mu \chi + F^\dagger F - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i \lambda^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda \nonext
+    && + \frac{1}{2} D^2 + D \varsigma - \sqrt{2} q (\phi^\dagger \chi \cdot \lambda + h.c.) - q\phi^\dagger \phi D
+    \label{eqn:10:free abelian times free chiral lagrangian}
+\end{eqnarray}
+
+and the fields of this theory transforms supersymmetrically as
+\begin{eqnarray}
+    \delta A^\mu &=& -\frac{1}{\sqrt{2}} (\xi^\dagger \Bar{\sigma}^\mu \lambda + \lambda^\dagger \Bar{\sigma}^\mu \xi) \nonext
+    \delta \lambda &=& -\frac{1}{2\sqrt{2}} F_{\mu\nu} \sigma^\mu \Bar{\sigma}^\nu \xi - \frac{1}{\sqrt{2}} D \xi \nonext
+    \delta D &=& \frac{i}{\sqrt{2}} \xi^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda - \frac{i}{\sqrt{2}} (\partial_\mu \lambda)^\dagger \Bar{\sigma}^\mu \xi \nonext
+    \delta \phi &=& \xi \cdot \chi \nonext
+    \delta \chi &=& -i (D_\mu \phi) \sigma^\mu (i\sigma^2) \xi^* + F \xi \nonext
+    \delta F &=& -i \xi^\dagger \Bar{\sigma}^\mu D_\mu \chi + \sqrt{2} q\phi \Bar{\xi} \cdot \Bar{\lambda}
+\end{eqnarray}
+
+For there to be a superpotential for the single chiral multiplet, it is necessary to be holomorphic in $\phi$, which means that the $U(1)$ charge of the chiral multiplet is 0, $\implies \phi = \phi^\dagger$. However, if we have multiple chiral multiplets, we simply have to ensure that the combination of multiplets must have a vanishing overall gauge charge and we will have a superpotential that embeds all the information of their self interactions.
+
+\section{Nonabelian free vector multiplet $\times$ free chiral multiplet}
+\label{ch:10:nonableian free vector multiplet times free chiral multiplet}
+To process is the same, where the only difference is that now we have to ensure that we keep track of the right indices for gauge fields and charges. After doing so, we will find that the interacting Lagrangian is
+\begin{equation}
+    \mathcal{L}_{int} = c_1\left([\phi^{\dagger^b} (T_F^a)^{bc} \chi^c] \cdot \lambda^a + h.c.\right) + c_2 [\phi^{\dagger^b} (T_F^a)^{bc} \phi^c] D^a
+\end{equation}
+where we will yet again find that
+\begin{equation}
+    c_1 = - \sqrt{2}g \quad , \quad c_2 = -g
+\end{equation}
+
+And with that, the Lagrangian becomes
+\begin{eqnarray}
+    \mathcal{L} &=& D_\mu \phi^\dagger D^\dagger \phi + i \chi^\dagger \Bar{\sigma}^\mu D_\mu \chi + F^\dagger F - \frac{1}{4} F_{\mu \nu} F^{\mu \nu} + i \lambda^\dagger \Bar{\sigma}^\mu \partial_\mu \lambda \nonext
+    && + \frac{1}{2} D^2 - \sqrt{2} g (\phi^\dagger \chi \cdot \lambda + h.c.) - g\phi^\dagger \phi D
+\end{eqnarray}
+and just as with the abelian case, the transformation rule for $F$ has to be modified to
+\begin{equation}
+    \delta F = ... + \sqrt{2} g \phi^b (T_F^a)^{bc} \Bar{\xi} \cdot \Bar{\lambda}^a
+\end{equation}
