@@ -1,1 +1,81 @@
 \chapter{A new notation}
+\label{ch:3}
+In this chapter, we will introduce a new notation for Weyl spinors that will be very useful in reading off the Lagrangian for interpretation and when working in the superfield approach.
+
+\section{Indices}
+\label{ch:3:indices}
+We will begin off by defining the index notation. As we will mostly be working in the left-chiral basis, it will be the basis of which our notation will be built off from. We will begin from the invariant $\eta^\dagger\chi$. We will define as a contraction of
+\begin{equation}
+    \eta^\dagger \chi \equiv \eta^\dagger \chi_a
+    \label{eqn:3:first definition}
+\end{equation}
+
+The hermitian conjugate of the right chiral spinor is defined as having an upper un-dotted index. We will define the right chiral spinor as having an upper dotted index.
+\begin{equation}
+    \eta \equiv \Bar{\eta}^{\Dot{a}} \implies \eta^a \equiv \lc \Bar{\eta}^{\Dot{a}}\rc ^\dagger
+\end{equation}
+
+With this, we can generalise the rest and see that the other fundamental invariant is
+\begin{equation}
+    \chi^\dagger\eta \equiv \Bar{\chi}_{\Dot{a}}\Bar{\eta}^{\Dot{a}}
+\end{equation}
+
+We will adopt a notation convention, that contractions between un-dotted indices are carried from top down, and for dotted indices from bottom up, as we see in the two definitions above.
+
+\section{Raising and lowering indices}
+We will make use of the fact that $(-i\sigma^2)_{ba}(i\sigma^2)^{ab} = \mathbb{1}$ allows us to define a metric to raise and lower the indices. To raise the indices,
+\begin{equation}
+    \Bar{\chi}^{\Dot{a}} \equiv (i\sigma^2)^{\Dot{a}b}\chi_b^\dagger = (i\sigma^2)^{\dot{a}\dot{b}}\Bar{\chi}_{\dot{b}}
+    \label{eqn:3:raising operation}
+\end{equation}
+With this, we can see that explicitly,
+\begin{equation}
+    \Bar{\chi}^{\dot{1}} = \Bar{\chi}_{\dot{2}} = \chi_2^\dagger \quad , \quad \Bar{\chi}^{\dot{2}} = - \Bar{\chi}_{\dot{1}} = -\chi_1^\dagger
+    \label{eqn:3:explicit raising operation}
+\end{equation}
+
+Likewise, lowering the indices is just as similar:
+\begin{equation}
+    \chi_b = (-i\sigma^2)_{ba}\chi^a
+    \label{eqn:3:lowering operation}
+\end{equation}
+
+With this, the Van der Waerden dot product is
+\begin{equation}
+    \eta \cdot \chi = \eta^1 \chi_1 + \eta^2 \chi_2 = \eta_2\chi_1 - \eta_1\chi_2
+\end{equation}
+
+\section{The epsilon metric}
+\label{ch:3:the epsilon metric}
+To clean up the $(i\sigma^2)$ that is plaguing our notation, let us define
+\begin{eqnarray}
+    \varepsilon^{ab} &\equiv& (i\sigma^2)^{ab} \nonext
+    \varepsilon^{\dot{a}\dot{b}} &\equiv& (i\sigma^2)^{\dot{a}\dot{b}} \nonext
+    \varepsilon_{ab} &\equiv& (-i\sigma^2)_{ab} \nonext
+    \varepsilon_{\dot{a}\dot{b}} &\equiv& (-i\sigma)^2_{\dot{a}\dot{b}} 
+\end{eqnarray}
+
+As $i\sigma^2$ is completely anti-symmetric, so is $\varepsilon$. Moreover, the contraction of $\varepsilon$ with itself is naturally
+\begin{equation}
+    \varepsilon^{ab}\varepsilon_{bc} = -\varepsilon^{ba}\varepsilon_{bc} = - \varepsilon^{ab}\varepsilon_{cb} = \varepsilon^{ba}\varepsilon_{cb} = \delta^a_c
+\end{equation}
+
+\section{$\sigma^\mu$ and $\Bar{\sigma}^\mu$ indices}
+\label{ch:3:sigma indices}
+We know that $i\sigma^\mu \eta$ is a left chiral spinor, so $i \sigma^\mu$ has to lower a dotted index to an un-dotted one. Likewise, $i\Bar{\sigma}^\mu \chi$ is a right chiral spinor, so $i \Bar{\sigma}^\mu$ raises an un-dotted index to a dotted one. We have:
+\begin{equation}
+    \Bar{\sigma}^\mu \equiv \left(\Bar{\sigma}^\mu\right)^{\dot{a}b} \quad , \quad \sigma^\mu \equiv \left(\sigma^\mu\right)_{a\dot{b}}
+\end{equation}
+
+We can see obtain this through $\varepsilon$
+\begin{eqnarray}
+    (i \sigma^2) \sigma^\mu (i \sigma^2) &=& \varepsilon^{ca}(\sigma^\mu)_{a\dot{b}}\varepsilon^{\dot{b}\dot{d}} \nonext
+    &=& (\Bar{\sigma}^\mu)^{c\dot{d}} \nonext
+    &=& - (\bar{\sigma}^\mu)^{\dot{d}c} \nonext
+    &=& - \left(\bar{\sigma}^\mu\right)^T
+\end{eqnarray}
+
+With this, we can that supersymmetric invariants with $\sigma^\mu$ or $\bar{\sigma}^\mu$ needs to have spinors with both dotted and un-dotted indices, of the same generation:
+\begin{equation}
+    \bar{\chi}_{\dot{a}} \left(\Bar{\sigma}^\mu\right)^{\dot{a}b} \lambda_b \quad , \quad \chi^a (\sigma^\mu)_{a\dot{b}} \bar{\lambda}^{\dot{b}}
+\end{equation}
