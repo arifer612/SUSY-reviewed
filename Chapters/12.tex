@@ -1,0 +1,117 @@
+\chapter{Left chiral superfields}
+\label{ch:12}
+
+We will work off from where we have left off in \ref{ch:11:constraints} to build left chiral superfields. Afterwards, we will see how this left chiral superfield can be used to arrive at the Lagrangians we have derived in the Wess-Zumino model and supersymmetric QED.
+
+\section{Left chiralty}
+The term left chiral refers to the fact that the spinors that appear explicitly are all left chiral spinors. We will start from the constraint $\Bar{D}_{\dot{a}}$ to see how we can extract the left chiral spinors.
+
+As we know, we want our superfield to be dependent on only 2 types of coordinates, $x^\mu$ and $\theta$. Identically, this means that we can introduce a new coordinate $y^\mu(x^\mu, \Bar{ \theta}$ that should naturally satisfy the constraint $\Bar{D}_{\dot{a}}$, such that our superfield can be dependent on $y^\mu, \theta$.
+
+An ansatz which fits the constraint is
+\begin{equation}
+    y^\mu = x^\mu -\frac{i}{2} \theta \sigma^\mu \Bar{\theta}
+    \label{eqn:12:y ansatz}
+\end{equation}
+
+With this, the most general left chiral superfield is
+\begin{equation}
+    \Phi_L (y, \theta) = \Phi(x^\mu - \frac{i}{2} \theta \sigma^\mu \Bar{\theta}, \theta)
+    \label{eqn:12:general left chiral superfield}
+\end{equation}
+
+Likewise, the most general right chiral superfield (satisfying the constraint $D_a \Phi = 0$) is
+\begin{equation}
+    \Phi_R (y, \theta) = \Phi(x^\mu + \frac{i}{2} \theta \sigma^\mu \Bar{\theta}, \theta)
+    \label{eqn:12:general right chiral supefield}
+\end{equation}
+, for which we find is actually the hermitian conjugate of $\Phi_L$! Therefore, for a left chiral superfield,
+\begin{equation}
+    \Bar{D}_{\dot{a}} \Phi = 0 \implies D_a \Phi^\dagger = 0
+\end{equation}
+
+Expanding the left chiral superfield,
+\begin{equation}
+    \Phi(y, \theta) = \phi(y) + \theta \cdot \chi(y) + \frac{1}{2} \theta\cdot\theta F(y)
+    \label{eqn:12:y expanded general left chiral superfield}
+\end{equation}
+and we see why the left chiral superfield is called left chiral!
+
+As we know that $y$ is a function of $x$ and $\Bar{\theta}$, we can expand it further:
+\begin{eqnarray}
+    \Phi &=& \phi(x) - \frac{i}{2} \theta \sigma^\mu \Bar{\theta} \partial_\mu \phi(x) - \frac{1}{16} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} \Box \phi(x) \nonext
+    && + \theta \cdot \chi(x) - \frac{i}{2} \theta \sigma^\mu \Bar{\theta} \theta \cdot \partial_\mu \chi(x) + \frac{1}{2} \theta \cdot \theta F(x)
+    \label{eqn:12:expanded general left chiral superfield}
+\end{eqnarray}
+
+\section{Ensuring supersymmetry of the superfield}
+\label{ch:12:ensuring supersymmetry of the superfield}
+Now that we have expanded the superfield in the full coordinates, let us check if the superfield transforms with the same rules as supersymmetry. 
+
+We have on one side,
+\begin{eqnarray}
+    \Phi^\prime &=& \phi^\prime - \frac{i}{2} \theta \sigma^\mu \Bar{\theta} \theta \cdot \partial_\mu \phi^\prime(x) - \frac{1}{16} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} \Box \phi^\prime(x) \nonext
+    && + \theta \cdot \chi^\prime(x) - \frac{i}{2} \theta \sigma^\mu \Bar{\theta} \theta\cdot \partial_\mu \chi^\prime (x) + \frac{1}{2} \theta \cdot \theta F^\prime (x)
+    \label{eqn:12:left chiral transformed LHS}
+\end{eqnarray}
+and on the other,
+\begin{eqnarray}
+    \Phi^\prime &=& \Phi + \frac{i}{2} (\xi \sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi}) \partial_\mu \phi + \frac{1}{4} (\xi \sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi}) \theta \sigma^\nu \Bar{\theta} \partial_\nu \partial_\mu \phi \nonext 
+    && - \frac{i}{32} (\xi\sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi} ) \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} \Box \partial_\mu \phi + \frac{i}{2} (\xi \sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi}) \theta \cdot \partial_\mu \chi \nonext
+    && + \frac{1}{4} (\xi \sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi}) \theta \sigma^\nu \Bar{\theta} \theta \cdot \partial_\nu \partial_\mu \chi + \frac{i}{4} (\xi \sigma^\mu \Bar{\theta} - \theta \sigma^\mu \Bar{\xi}) \theta \cdot \theta \partial_\mu F \nonext
+    && - \frac{i}{2} \xi \sigma^\mu \Bar{\theta} \partial_\mu \phi - \frac{1}{8} \xi\cdot\theta \Bar{\theta}\cdot\Bar{\theta}\Box \phi + \xi \cdot \chi - \frac{i}{2} \xi \sigma^\mu \Bar{\theta} \theta\cdot\partial_\mu \chi \nonext
+    && - \frac{i}{2} \theta \sigma^\mu \Bar{\theta} \xi \cdot \partial_\mu \chi + F \xi \cdot \theta + \frac{i}{2} \Bar{\xi} \Bar{\sigma}^\mu \theta \partial_\mu \phi - \frac{1}{8} \theta\cdot \theta \Bar{\xi} \cdot \Bar{\theta} \Box \phi + \frac{i}{2} \Bar{\xi} \Bar{\sigma} \theta \theta \cdot \partial_\mu \chi
+    \label{eqn:12:left chiral transformed RHS}
+\end{eqnarray}
+
+Comparing coefficients and remembering that any Grassmann terms of more than a quadratic relation is identically $0$, we will arrive at the same SUSY algebra of Equations \ref{eqn:6:susy algebra}. Therefore, the superfield is supersymmetry invariant and we can use it to build our Lagrangians.
+
+We can also find that any product of left chiral superfields will also be a left chiral superfield and remain invariant under supersymmetry. The same goes for right chiral superfields too, but that will not be of interest to us.
+
+\section{$F$ terms}
+\label{ch:12:f terms}
+Let us recall that in the Wess-Zumino Lagrangian, the auxiliary field $F$ transforms as a total derivative. The field can be extracted from the superfield through the Grassmann integration $\int \td^2 \theta^2 \Phi(x, \theta, \Bar{\theta})$. This means that $\int \td^4 x \td^2 \theta^2 \Phi(x, \theta, \Bar{\theta})$ is an invariant under a supersymmetry transformation.
+
+\section{Building the Wess-Zumino Interactions}
+\label{ch:12:building the wess zumino interactions}
+The Wess-Zumino model is a single multiplet with self-interactions. To bring out the interactions in the $F$ terms of the superfield, we need to consider more than 1 superfield.
+
+Let us look at the possible combinations of superfields we can have. We realise that $\Phi_i \Phi_j \vert_F$ has a dimension of 3, so we shall couple it to a dimension 1 coupling $m_{ij}$. The furthest we can then go for a renormalisable theory is to have $\Phi^3$ in $y_{ijk} \Phi_i \Phi_j \Phi_k$
+
+Put together, we have
+\begin{equation}
+    \left.\frac{1}{2} m_{ij} \Phi_i \Phi_j + \frac{1}{6} y_{ijk}\Phi_i\Phi_j\Phi_k + h.c. \right\vert_F
+\end{equation}
+which is exactly the superpotential that we saw in the Wess-Zumino model. To show that it really does give us the right terms in the Wess-Zumino model, consider the superpotential with $F_i$:
+\begin{equation}
+    \left.\mathcal{W} (\Phi_1, \Phi_2 \dots \Phi_n)\right\vert_{F_i} = \diff{\mathcal{W}(\phi_1, \phi_2 \dots \phi_n}{\phi_i} F_i
+\end{equation}
+which are the Wess-Zumino interactions that we wanted to see.
+
+Besides those interactions, there were also the spinor interactions. The remaining terms of the $\big\vert_{F}$ operation on the superfield is
+\begin{eqnarray}
+    \mathcal{W}(\phi_1, \dots \theta \cdot \chi_i, \dots, \theta \cdot \chi_j \cdot \phi_n) &=& \mathcal{W}(\phi_1, \dots 1, \dots, 1 \dots \phi_n) \chi_i \cdot \chi_j \theta\cdot\theta + h.c. \nonext
+    &=& -\frac{1}{2} \theta \cdot \theta \diff{^2\mathcal{W}(\phi_1, \phi_2, \dots \phi_n}{\phi_i \partial( \phi_j} \chi_i \cdot \chi_j + h.c.
+\end{eqnarray}
+
+Putting them together, 
+\begin{equation}
+    \mathcal{\Phi_i, \dots \Phi_n}\big\vert_F = \diff{\mathcal{W}(\phi_1, \phi_2 \dots \phi_n}{\phi_i} F_i - -\frac{1}{2} \diff{^2\mathcal{W}(\phi_1, \phi_2, \dots \phi_n}{\phi_i \partial( \phi_j} \chi_i \cdot \chi_j + h.c.
+    \label{eqn:12:wess zumino interactions}
+\end{equation}
+
+And we have exactly, the interactions of the Wess-Zumino model.
+
+\section{$D$ terms}
+\label{ch:12:d terms}
+Besides the interaction terms, we also need a way to extract information about the kinetic terms of the Lagrangian from the superfield formalism. The most intuitive approach would be to use $\Phi^\dagger \Phi$, which is correct. However, instead of extracting out the $F$ terms as we did for the interactions, we need to extract a different term this time. This is because unlike the interaction terms, $\Phi^\dagger \Phi$ is not a left chiral superfield. Remember that it was only because of the fact that $\Phi_i\Phi_j$ is left chiral that we were able to identify its corresponding auxiliary field $F$ which we know transforms as a total derivative under supersymmetric transformations.
+
+What we do now is to find a term which we know definitely is an invariant in the Lagrangian density and just `extract' that term like we did for the $F$ terms. These new set of terms are referred to as the $D$ terms. If we were to expand $\Phi^\dagger\Phi$ in full, we would see that leading term is
+\begin{equation}
+    \Phi^\dagger\Phi = \frac{1}{4} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} \partial_\mu \phi^\dagger \partial^\mu \phi + \dots
+\end{equation}
+Since we already know that $\partial_\mu \phi^\dagger \partial^\mu \phi$ is an invariant (and one that we need), we shall extract this term. Taking the integral over $\int \td^2 \theta^2 \td^2 \Bar{\theta}^2$, we will get
+\begin{equation}
+    \Phi^\dagger \Phi\big\vert_D = \partial_\mu \phi^\dagger \partial^\mu \phi + i \Bar{\chi} \Bar{\sigma}^\mu \partial_\mu \chi + F^\dagger F
+\end{equation}
+which when added to Equation \ref{eqn:12:wess zumino interactions}, gives us the Wess-Zumino Lagrangian! In the next chapter, we will expand further, working on gauge field theories using the superspace formalism and we will see that this method is much more efficient than manually deriving the Lagrangians as what we have done in the earlier half of the book!

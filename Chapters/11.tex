@@ -1,0 +1,135 @@
+\chapter{Superspace Formalism}
+\label{ch:11}
+
+As we have seen in Equation \ref{eqn:6:susy algebra}, the algebra of supersymmetric charges result in a translation in spacetime. This suggests that it should be embedded in some form in the explicit representation of $Q$ and that we can treat the supercharges as differential operators. In this chapter, we will expand more on this idea and see how we can extend spacetime to include 4 additional dimensions on which the supercharges operate on. Afterwards, we will get the explicitly derive the differential operator representations of the supercharges and discuss the interpretation of it. Lastly, we will preemptively look at constraints that we can introduce to this formalism for our next chapter.
+
+\section{Supercharges in superspace}
+Let us consider the unitary operator of the Lorentz charge: $U(a) = \exp[ia^\mu P_\mu]$. $a^\mu$ is the infinitesimal spacetime displacement. Compare that to the unitary operator of the Supersymmetry charge: $U(\xi) =  \exp[i\xi \cdot Q]$. If we were to make a direct comparison on the premise that $Q$ here is a differential operator, this means that $Q$ displaces the particle by an infinitesimal displacement $\xi$ in whatever space it spans. We know too, that $\xi$ is a spinor with Grassmann components, so it would make sense for us to assume that the space $\xi$ spans is a two-component Grassmann space -- what we will now call the superspace. Since there are 4 degrees of freedom, $\xi$ and $\xi^*$, we have 4 `coordinates' in superspace. They are represented as left chiral spinors as well, for obvious reasons.
+\begin{equation}
+    \theta \equiv \col{\theta_1}{\theta_2}
+\end{equation}
+where we are using the new indexed notation introduced in Chapter \ref{ch:3}.
+
+Any supersymmetric transformation will therefore be a transformation of
+\begin{equation}
+    \Phi(x, \theta, \Bar{\theta}) \rightarrow \Phi(x^\prime \theta^\prime, \Bar{\theta}^\prime) = U(\alpha, \xi, \Bar{\xi}) \Phi(x, \theta, \Bar{\theta}) U^\dagger(\alpha, \xi, \Bar{\xi})
+    \label{eqn:11:susy transformation with unitary operators}
+\end{equation}
+
+We will apply what we have done in Chapter \ref{ch:6} to derive the explicit differential operator representations of $Q$. We can decompose a unitary operator into a product of unitary operators
+\begin{equation}
+    U(x^\prime, \theta^\prime, \Bar{\theta}^\prime) = U(\alpha, \xi, \Bar{\xi}) U(x, \theta, \Bar{\theta})
+    \label{eqn:11:unitary operator product}
+\end{equation}
+if the arguments add up as
+\begin{eqnarray*}
+    x^\prime &=& x + \alpha \nonext
+    \theta^\prime &=& \theta + \xi \nonext
+    \Bar{\theta}^\prime &=& \Bar{\theta} + \Bar{\xi}
+\end{eqnarray*}
+
+However, this does not mean that the exponential arguments add up as they may be quantum field operators. Recall the Baker-Campbell-Hausdorff formula:
+\begin{equation}
+    \exp[A]\exp[B] = \exp[A + B + \frac{1}{2}[A,B] + \dots]
+\end{equation}
+
+The unitary operator will be represented as
+\begin{equation}
+    U(x, \theta, \Bar{\theta}) = \exp[i x\cdot P + i \theta\cdot Q, i \Bar{\theta}\cdot\Bar{Q}]
+\end{equation}
+as its product with its hermitian conjugate to the first order gives us identity.
+
+Expanding Equation \ref{eqn:11:unitary operator product} and the commutator relations that arise from the Baker-Campbell-Hausdorff formula, we get
+\begin{eqnarray}
+    \exp[i x^\prime \cdot P + i \theta^\prime \cdot Q + i \Bar{\theta}^\prime \cdot \Bar{Q}] &=& \exp[i (x+\alpha)\cdot P + i(\theta+\xi)\cdot Q + i(\Bar{\theta}+\Bar{\xi})\cdot\Bar{Q} \nonext
+    && - \frac{1}{2}\xi \sigma^\mu \Bar{\theta}P_\mu + \frac{1}{2} \theta\sigma^\mu\Bar{\xi}P_\mu]
+    \label{eqn:11:unitary operator product expanded}
+\end{eqnarray}
+
+We can read off the coordinate transformations to be
+\begin{eqnarray}
+    x^\prime &=& x + \alpha - \frac{i}{2} \theta\sigma^\mu\Bar{\xi} + \frac{i}{2} \xi\sigma^\mu\Bar{\theta} \nonext
+    \theta^\prime &=& \theta + \xi \nonext
+    \Bar{\theta}^\prime &=& \Bar{\theta} + \Bar{\xi}
+    \label{eqn:11:coordinate transformations}
+\end{eqnarray}
+It shows exactly what we are hoping to see, the transformation of regular spacetime under supersymmetry!
+
+\section{Supercharges as explicit superspace differential operators}
+Let us now find the explicit differential forms of the supercharges. We will do this by operating the unitary transformation operator on a known state
+\begin{eqnarray}
+    S(x + \delta x, \theta + \delta \theta, \Bar{\theta} + \delta \theta) &=& \exp[-i \alpha^\mu P_\mu -i \xi^a Q_a - i \Bar{\xi}_{\Dot{a}}\Bar{Q}^{\Dot{a}}] S(x, \theta, \Bar{\theta}) \nonext
+    &=& S_0 + \lc \alpha^\mu + \frac{1}{2}\xi\sigma^\mu\Bar{\theta} -\frac{1}{2}\theta\sigma^\mu\Bar{\xi}\rc \partial_\mu S_0 + \xi^a\partial_a S_0 + \Bar{\xi}_{\Dot{a}}\Bar{\partial}^{\Dot{a}}
+\end{eqnarray}
+
+Once again, reading off the coefficients, we have:
+\begin{eqnarray}
+    \hat{P}_\mu &=& i\partial_\mu \label{eqn:11:p differential operator} \\
+    Q_a &=& i \partial_a - \frac{1}{2} \sigma^\mu\Bar{\theta}\partial_\mu \label{eqn:11:q differential operator} \\
+    \Bar{Q}^{\Dot{a}} = i \Bar{\partial}^{\Dot{a}} - \frac{1}{2} \Bar{\sigma}^\mu \theta_b \partial_\mu \label{eqn:11:q bar upper differnetial operator}
+\end{eqnarray}
+
+We can lower the indices of Equation \ref{eqn:11:q bar upper differnetial operator} to get
+\begin{equation}
+    \Bar{Q}_{\Dot{a}} = -i \Bar{\partial}_{\Dot{a}} + \frac{1}{2} \theta \sigma^\mu \partial_\mu
+\end{equation}
+
+We could use these explicit representations to verify the supersymmetry algebra in Equations \ref{eqn:6:susy algebra} and find that they are consistent.
+
+\section{Adding constraints}
+\label{ch:11:constraints}
+If we were to use the superspace formalism as is to build the Wess-Zumino Lagrangian, the first thing we would notice is that there would be too many terms for a superfield $\mathcal{F} = \mathcal{F}(x, \theta, \Bar{\theta})$. However, $\mathcal{F} = \mathcal{F}(x, \theta)$ gives the right number of fields, but it will no longer be supersymmetric invariant as after transformation, there will be a $\Bar{\theta}$ dependence. The approach to fix this is simple -- add a constraint. 
+
+Let us see what happens when we add a constraint such that the superfield is independent of $\Bar{\theta}$:
+\begin{equation}
+    \diff{}{\Bar{\theta}^{\Dot{a}}} \mathcal{F}(x, \theta, \Bar{\theta}) = 0
+    \label{eqn:11:first constraint ansatz}
+\end{equation}
+
+This constraint should remain even after transformation.
+\begin{equation}
+    \diff{}{\Bar{\theta}^{\Dot{a}}} \mathcal{F^\prime}(x, \theta, \Bar{\theta}) = -i \partial_{\dot{a}} \left[(\alpha^\mu \hat{P}_\mu + \xi\cdot \hat{Q} + \Bar{\xi} \cdot \hat{\bar{Q}}) \mathcal{F} \right] = 0
+    \label{eqn:11:first constraint start}
+\end{equation}
+
+\begin{equation}
+    \implies \left[ \partial_{\dot{a}}, \xi \cdot \hat{Q} + \Bar{\xi} \cdot \hat{\Bar{Q}} \right] = 0
+\end{equation}
+
+\begin{equation}
+    \therefore \{ \bar{\partial}_{\dot{a}} , \hat{Q}_b \} = \{ \bar{\partial}_{\dot{a}}, \hat{\bar{Q}}^{\dot{b}}\} = 0
+\end{equation}
+
+From these, it can be seen that the second constraint is identically 0, and the first says that
+\begin{equation}
+    \{ \bar{\partial}_{\dot{a}} , \hat{Q}_b \} = \delta^{\dot{c}}_{\dot{a}} \neq 0
+\end{equation}
+is a contradiction. So on its own, Equation \ref{eqn:11:first constraint ansatz} is not sufficient enough as a constraint. To fix this, we will add some terms to the constraint to make get rid of the Dirac delta.
+
+\begin{equation}
+    \bar{D}_{\dot{a}} = \bar{\partial}_{\dot{a}} + C_{\dot{a}c}\theta^c
+    \label{eqn:11:second constraint ansatz}
+\end{equation}
+
+Repeating the process from Equation \ref{eqn:11:first constraint start}, we will see that we will end up at
+\begin{equation}
+    \{\bar{D}_{\dot{a}}, \hat{Q}_b \} = i C_{\dot{a}b} + \frac{i}{2} \sigma^\mu_{b\dot{a}} \hat{P}_\mu
+    \label{eqn:11:second constraint end}
+\end{equation}
+which means that we can have a supersymmetrically consistent constraint:
+\begin{equation}
+    \bar{D}_{\dot{a}} = \bar{\partial}_{\dot{a}} - \frac{i}{2} \theta^c \sigma^\mu_{c\dot{a}} \partial_\mu
+    \label{eqn:11:left chiral constraint}
+\end{equation}
+Likewise, we can also have the un-barred flavour
+\begin{equation}
+    D_a = \partial_a - \frac{i}{2} \sigma^\mu_{a\dot{b}} \bar{\theta}^{\dot{b}} \partial_\mu
+    \label{eqn:11:right chiral constraint}
+\end{equation}
+
+Since these constraints are indexed, we can raise or lower them as we wish and we can also form supersymmetric invariants with them too. $D\cdot D$ and $\bar{D} \cdot \bar{D}$. These also work with the indexed constraints like $D_a D \cdot D \mathcal{S} = 0$.
+
+Since constraints are built off Grassmann variables, they vanish under anti-commutators for all combinations except
+\begin{equation}
+    \{ D_a, \bar{D}_{\dot{b}} \} = - \sigma^\mu{a\dot{b}} \hat{P}_\mu
+\end{equation}

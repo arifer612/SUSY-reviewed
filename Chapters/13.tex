@@ -1,0 +1,121 @@
+\chapter{supersymmetric Gauge Field Theories in the Superfield Approach}
+\label{ch:13}
+We have seen in the earlier chapter how we can extract out the Wess-Zumimno Lagrangian without any of the troublesome invariance checks just by using left chiral superfields. We will see in this chapter that the approach of using superfields is translatable even for more complex theories such as those with local gauges. In the first part of the chapter, we will be introduced to a new way of adding gauge to a superfield. Afterwards are just applying them to QED and QCD.
+
+\section{Adding a $U(1)$ gauge to left chiral superfields}
+\label{ch:13:adding gauge to eft chiral superfields}
+Let us consider a $U(1)$ charge. 
+\begin{equation}
+    \Phi \rightarrow \exp[i 2 q \Lambda] \Phi
+\end{equation}
+where for our current discussion, $\Lambda$ is a spacetime dependent field. The factor of 2 is picked preemptively.
+
+Since we need $\Phi$ to remain a left chiral superfield, $\Lambda$ has to be a left chiral superfield as well. However, since $\Lambda$ is an exponential argument, $[\Lambda] = 0$ which implies that $[\phi_\Lambda] = 0$, $[\chi_\Lambda] = 1/2$, and $[F_\Lambda] = 1$, different from the superfields of the previous chapter.
+
+For a gauge invariant theory, we have to construct our fields such that the total gauge charges vanish. The kinetic terms are embedded in
+\begin{equation}
+    \Phi^\dagger \Phi \rightarrow \exp[2iq(\Lambda - \Lambda^\dagger)]\Phi^\dagger\Phi
+\end{equation}
+
+However, it is not definite that $\Phi^\dagger \Phi$ is gauge invariant as $\Lambda \in \mathbb{C}$. This can be solved by introducing a new real gauge field $\mathcal{V}$:
+\begin{equation}
+    \Phi^\dagger \Phi \rightarrow \Phi^\dagger \exp[2q\mathcal{V}] \Phi
+\end{equation}
+where
+\begin{equation}
+    \mathcal{V} \rightarrow \mathcal{V} - i (\Lambda - \Lambda^\dagger)
+\end{equation}
+
+The most general form $\mathcal{V}$ can take if it has to be a real field, and adding some scaling factors,
+\begin{eqnarray}
+    \mathcal{V} &=& C(x) + \frac{i}{\sqrt{2}} \theta \cdot \rho (x) - \frac{i}{\sqrt{2}} \Bar{\theta} \cdot \Bar{\rho} (x) + \frac{i}{4}\theta \cdot \theta (M(x) + iN(x)) \nonext 
+    && - \frac{i}{4} \Bar{\theta} \cdot \Bar{\theta} \lc M^\dagger(x) - i N^\dagger(x)\rc + \frac{1}{2} \theta \sigma^\mu \Bar{\theta} A_\mu (x) + \frac{1}{2\sqrt{2}} \theta \cdot \theta \left(\Bar{\theta} \cdot \lambda + \frac{1}{2} \Bar{\theta} \Bar{\sigma}^\mu \partial_\mu \rho \right) \nonext
+    && + \frac{1}{2\sqrt{2}} \Bar{\theta} \cdot \Bar{\theta} \left(\theta \cdot \lambda - \frac{1}{2} \theta \sigma^\mu \partial_\mu \Bar{\rho} \right) - \frac{1}{8} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} \left( D(x) + \frac{1}{2}\Box C(x) \right)
+\end{eqnarray}
+
+Comparing the transformed $\mathcal{V}$, we find that the terms can be reduced to
+\begin{equation}
+    \mathcal{V} = \frac{1}{2} \theta \sigma^\mu \Bar{\theta} A_\mu + \frac{1}{2\sqrt{2}} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\lambda} + \frac{1}{2 \sqrt{2}} \Bar{\theta} \cdot \Bar{\theta} \theta \cdot \lambda - \frac{1}{8} \theta \cdot \theta \Bar{\theta} \cdot \Bar{\theta} D
+\end{equation}
+where $\lambda$ and $D$ are gauge invariant. So for abelian gauge theories, the Lagrangian can be retrieved from superfields as:
+\begin{equation}
+    \mathcal{L} = \left(\left. \mathcal{W} (\Phi_i)\right\vert_F + h.c. \right) + \sum_i \Phi_i^\dagger \left.\exp[2q_i \mathcal{V}] \Phi_i\right\vert_D + \varpi D
+\end{equation}
+where $\varpi D$ is the L.I. term. 
+
+Let us expand $\Phi^\dagger \exp[2q\mathcal{V}] \Phi\vert_D$ in full, noting that we only need to expand up to $\mathcal{V}^2$ since it is Grassmann.
+\begin{eqnarray}
+    \Phi^\dagger \exp[2q\mathcal{V}] \Phi\vert_D &=& \mathcal{L}_{WZ, free} + 2q\Phi^\dagger\Phi\mathcal{V}\vert_D + 2q^2\Phi^\dagger\Phi\mathcal{V}^2\vert_D \nonext
+    &=& D_\mu \phi^\dagger D^\mu \phi + i \Bar{\chi} \Bar{\sigma}^\mu D_\mu \chi + F^\dagger F - q\phi^\dagger \phi D \nonext
+    && - \sqrt{2} q (\chi \cdot \lambda \phi^\dagger + h.c.)
+\end{eqnarray}
+with $D_\mu \equiv \partial_\mu + i q A_\mu$
+we see that these terms are what we see in the abelian gauge theory, without the field strength or photino kinetic terms, or $\frac{1}{2} D^2$.
+
+To extract the field strength, we have to first understand mathematically where it could come from. Logically, the answer is through the gauge field $\mathcal{V}$, where it comes attached with 2 Grassmann variables. Applying the covariant derivative once on $\mathcal{V}$ will give us terms proportional to $\partial_\nu A_\mu$, but to extract it out for the Lagrangian, we need to add in 2 more Grassmann variables. This can be achieved by operating $\Bar{D} \cdot \Bar{D}$ on it! The super-field strength is thus
+\begin{equation}
+    \mathcal{F}_a \equiv \Bar{D} \cdot \Bar{D} D_a \mathcal{V}
+\end{equation}
+We can verify that $\mathcal{F}_a$ is a left chiral superfield by acting the constraint $\Bar{D}_{\Dot{b}}$ on it.
+
+Let us assume that $\mathcal{F}_a$ transforms under the gauge as $\mathcal{V}$ does.
+\begin{equation}
+    \mathcal{F}_a \rightarrow \mathcal{F}_a - i \Bar{D} \cdot \Bar{D} D_a \Lambda + i \Bar{D} \cdot \Bar{D} D_a \Lambda^\dagger
+\end{equation}
+We will see that $\mathcal{F}_a$ is gauge invariant, as the field strength is in the abelian theory!
+
+Applying the covariant derivatives explicitly, we find that the super-field strength is
+\begin{equation}
+    \mathcal{F}_a = \sqrt{2}\lambda_a - \theta_a D - F_{\mu\nu} (\sigma^{\mu\nu})^b_a \theta_b + \frac{i}{\sqrt{2}} \theta \cdot \theta \sigma^\mu_a \partial_\mu \Bar{\lambda}
+\end{equation}
+
+Now, our super-field strength has an index and cannot be used as-is in a Lagrangian. To do so, we shall have to contract it and take the appropriate Grassmann integration. Since we built $\mathcal{F}_a$ completely out of left chiral superfields, we need to take the $F$ terms of the contraction. Doing so, we arrive at
+\begin{equation}
+    \left.\frac{1}{4} \mathcal{F}^a\mathcal{F}_a\right\vert_F = \frac{1}{2} D^2 + i\Bar{\lambda}\sigma^\mu \partial_\mu \lambda - \frac{1}{4} F_{\mu\nu}F^{\mu\nu}
+\end{equation}
+which are the missing terms that we were looking for!
+
+So in total, the Lagrangian n-left chiral superfields coupled with a $U(1)$ gauge field is
+\begin{equation}
+    \mathcal{L} = \left[\left.\mathcal{W}(\Phi_i)\right\vert_F + h.c.\right] + \left.\sum_i^n \Phi_i^\dagger \exp[2q_i\mathcal{V}]\Phi_i\right\vert_D + \left.\frac{1}{4} \mathcal{F} \cdot \mathcal{F} \right\vert_F
+\end{equation}
+
+\section{The supersymmetric QED}
+\label{ch:13:the supersymmetric QED}
+Before we get ahead of ourselves and apply what we have done to the multiplet, we need to get our superfields in order. Unlike what we have done so far, QED has 2 left chiral and 2 right chiral particles. Applying what we did, we would have to deal with a mess of left and right chiral superfields at the same time. However, we can clean this up making use of the CPT invariance which brought us this problem, to sweep away all the right chiral fields. 
+
+Let us start with the electron. We can introduce a left chiral superfield for it as 
+\begin{equation}
+    \mathcal{E}_e = \Tilde{\phi}_e + \theta \cdot \chi_e + \frac{1}{2} \theta \cdot \theta F_e
+\end{equation}
+where the tides signify superpartners.
+
+Because of CPT, this field is actually related to the right chiral positron's superfield! In that same vein, the right chiral superfield for the electron is related to the left chiral superfield for the positron. Our 4 superfields have reduced to 2 left chiral superfields! All we need to consider for the electrons (and the other lepton generations) are $\mathcal{E}_e$ and $\mathcal{E}_{\Bar{e}}$. The other 2 fields are embedded in the hermitian conjugates of these fields.
+
+Naturally, the $U(1)$ charges of these fields are $q = \pm e$, so under a gauge transformation, we have 
+\begin{eqnarray}
+    \mathcal{E}_e \rightarrow \exp[-2ie\Lambda] \mathcal{E}_e \nonext
+    \mathcal{E}_{\Bar{e}} \rightarrow \exp[-2ie\Lambda] \mathcal{E}_{\Bar{e}} \nonumber
+\end{eqnarray}
+
+Since the total charge of the 2 left chiral superfields vanish, we can have a superpotential with both superfields. The invariants we can build are
+\begin{equation}
+    \mathcal{E}_e \mathcal{E}_{\Bar{e}} \quad , \quad \mathcal{F}^a \mathcal{F}_a \quad , \quad \mathcal{E}_e^\dagger \exp[-2e\mathcal{V}] \mathcal{E}_e + h.c.
+\end{equation}
+We can form more invariants by combining some of these terms too. Once we have all the combinations we need to consider (and adding the proper dimensions) we can apply what we did in the previous chapter to get the supersymmetric QED lagrangian:
+\begin{equation}
+    \mathcal{L}_{sQED} = \left.\frac{1}{4} \mathcal{F}^a \mathcal{F}_a\right\vert_F + \mathcal{E}_e^\dagger \exp[-2e\mathcal{V}] \mathcal{E}_e + \mathcal{E}_{\Bar{e}}^\dagger \exp[2e\mathcal{V}]\mathcal{E}_{\Bar{e}} + (\mathcal{W}\vert_F + h.c.) 
+\end{equation}
+
+\section{Supersymmetric nonabelian gauge theory}
+\label{ch:13: supersymmetric nonabelian gauge theory}
+As with what we done in Chapter \ref{ch:10} Section \ref{ch:10:nonableian free vector multiplet times free chiral multiplet}, we will start treat our gauge superfields as a representation of the gauge
+\begin{equation}
+    \mathcal{V} \equiv \mathcal{V}^i T_F^i \quad , i \in [1, N^2-1]
+\end{equation}
+for an $SU(N)$ nonabelian gauge theory.
+With this, our Lagrangian gets a little bit more complicated
+\begin{equation}
+    \mathcal{L} = \left.\frac{1}{2} Tr(\mathcal{F}^a_i \mathcal{ai}) \right\vert_F + \left. \Phi_i^\dagger \exp[2g\mathcal{V}]\Phi_i\right\vert_D + \left.(\mathcal{W}(\Phi_i) + h.c. )\right\vert_F
+\end{equation}
+showing once again how powerful the superspace formalism really is.

@@ -606,6 +606,7 @@ passing it to article class \MessageBreak
                     \addtocontents{lof}{\protect\addvspace{10\p@}}%
                     \addtocontents{lot}{\protect\addvspace{10\p@}}%
                     \setcounter{section}{0}
+                    \setcounter{equation}{0}
                     \if@twocolumn
                       \@topnewpage[\@makechapterhead{#2}]%
                     \else
@@ -1047,7 +1048,7 @@ passing it to article class \MessageBreak
   \def\thesection{\@arabic\c@section}%
   \def\thefigure{\@arabic\c@figure}%
   \def\thetable{\@arabic\c@table}%
-  \def\theequation{\arabic{equation}}%
+  \def\theequation{\arabic{chapter}.\arabic{equation}}%
   \def\thesubequation{\arabic{equation}\alph{subequation}}}
 %
 \def\ds@book{\@numartfalse
