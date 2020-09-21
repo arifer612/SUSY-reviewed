@@ -1,0 +1,277 @@
+\chapter{SUSY Breaking}
+\label{ch:14}
+
+We have learnt how to build supersymmetric theories by building up supersymmetric invariants in the earlier half of the book or through the superspace formalism in the last few chapters. However, we know for a fact that supersymmetry has to be broken as all of the theories we have encountered so far require the superpartners to be of the same mass as the particle, so it only makes sense that supersymmetry has to be broken for it to make sense. Let us now find the conditions required for them to break and make physical sense of them. Afterwards, we will discuss why these conditions quite unfortunately imply that spontaneous supersymmetry breaking is not possible and how we should explicitly break it such that we can still keep the nice vanishing quadratic divergences that is characteristic of supersymmetry.
+
+\section{Minimum potential}
+\label{ch:14:minimum potential}
+Symmetry breaking can be read by figuring where the potential of the theory is minimum at. As we have seen in an earlier chapter, supersymmetry breaking occurs when the charges do not annihilate the vacuum state, so the minimum potential is always a positive definite value more than $0$. We can mix this with gauge symmetry breaking by having more than 1 minimum potential that are both positive definite and more than $0$, but that is not our focus for this chapter so let us put it aside.
+
+We know that in supersymmetric theories, our potential is simply a function of the 2 auxiliary fields $F$ and $D$
+\begin{equation}
+    V(\phi_i) = F_i^\dagger F_i + \frac{1}{2} D^2
+\end{equation}
+where $F_i = \diff{\mathcal{W}}{\phi_i}$ and $D = q_i\phi_i^\dagger \phi_i - \zeta $ for the abelian gauge and $D^a = g\phi_i^\dagger T^a \phi_i$ for the nonabelian gauge.
+
+The minimum potential is obtained by finding the vacuum-expectation-value (vev) of the potential. Since $V$ is a sum of 2 absolute squares (recall that $D$ is a real field), this implies that the vev of $F$ and $D$ have to simultaneously vanish for unbroken supersymmetry. This gives us the condition for spontaneous supersymmetry breaking: $F-type$ where the vev of the $F$ field does not vanish, and $D-type$ where the vev of the $D$ field does not vanish notwithstanding the influence of $F$ on it. We shall look into both these types.
+
+\section{F-type}
+\label{ch:14:f-type breaking}
+F-type breaking can only take place with $F$ fields, which the existence of the holomorphic superpotential $\mathcal{W}$. Finding the minimum of this potential will tell us whether it is possible for spontaneous breaking to take place. Take for example the superpotential of sQED:
+\begin{equation}
+    \mathcal{W} = m \mathcal{E}_e\mathcal{E}_{\Bar{e}}
+\end{equation}
+We differentiate it with respect to the boson field and set each auxiliary field to $0$ and find if we can find a unique solution.
+\begin{equation}
+    \implies F_e = -m \Bar{\phi}_{\Bar{e}} = 0\quad , \quad F_{\Bar{e}} = -m \Bar{\phi}_e = 0
+\end{equation}
+where the minimum occurs when $\Bar{\phi}_{\Bar{e}} = \Bar{\phi}_e = 0$ at a value of $0$. So clearly F-type breaking does not take place in the sQED.
+
+To be able to see F-type breaking take place, our superpotential needs to have at least 3 fields coupled together. Consider the O'Raifeartaigh model:
+\begin{equation}
+    \mathcal{W} = m\Phi_1 \Phi_3 + g\Phi_2 (\Phi_3^2 - M^2)
+\end{equation}
+\begin{eqnarray}
+    F_1^\dagger &=& -m\Phi_3 = 0 \nonext
+    \implies F_2^\dagger &=& -g(\phi_3^2 - M^2) = 0\nonext
+    F_3^\dagger &=& -m\phi_1 - 2g\phi_2 \phi_3 = 0 
+    \label{eqn:14:auxiliary fields in f type}
+\end{eqnarray}
+for which if $M^2 > 0$, clearly there is no solution to this set of simultaneous equations, so this model is spontaneously broken.
+
+The $V_{min}$ is characterised by the sign of $M^2 - 2g^2 M^2$ where going through the mathematics, we will see that
+\begin{equation}
+    V_{min} =
+    \begin{cases}
+        g^2 M^4, m^2 \geq 2g^2 M^2 \\
+        m^2 \left(M^2 - \frac{m^2}{4g^2}\right)
+    \end{cases}
+\end{equation}
+
+To get the masses of the superpartners, we have to diagonalise the mass spectrum. Let us decompose each field into its real and imaginary parts. Because of the what we have seen in Equation \ref{eqn:14:auxiliary fields in f type}, we have the freedom of shifting the value of $\phi_2$ as we see fit (since we can only completely decompose 2 of the equations). Let us shift is with respect to its vev so that at the minimum, $V_{min}$ only has 1 degree of freedom and that is $\braket{\phi_2}$.
+\begin{equation}
+    \phi_2 \rightarrow \phi_2 + \braket{\phi_2}
+\end{equation}
+
+The potential of the O'Raifeartagh model is thus:
+\begin{eqnarray}
+    V &=& \frac{1}{2} (m^2 - 2g^2 M^2) R_3^2 + \frac{1}{2} (m^2 + (2g^2 M^2) I_3^2 + \frac{1}{4}g^2 (R_3^2 + I_3^2)^2 + g^2M^4 \nonext
+    && + \left(\frac{1}{\sqrt{2}} m R_1 + g R_2 R_3 - g I_2 I_3 + \sqrt{2}g\braket{\phi_2} R_3\right)^2 \nonext
+    && + \left(\frac{1}{\sqrt{2}} m I_1 + g R_2 I_3 - g I_2 R_3 + \sqrt{2}g\braket{\phi_2} I_3\right)^2 
+\end{eqnarray}
+
+The mass spectrum is built off the second order derivatives of $V$, so we can see that there are very few particle couplings that we really need to consider: $\{R1, R_3\}$ and $\{I_1, I_3\}$. This implies that the remaining terms are already diagonalised.
+\begin{equation}
+    M_{R_1 R_3} =
+    \begin{pmatrix}
+        m^2 & 2mg\braket{\phi_2}\\
+        2mg\braket{\phi_2} & m^2 - 2g^2 M^2 + 4g^2 \braket{\phi_2}
+    \end{pmatrix}
+\end{equation}
+\begin{equation}
+    M_{R_2 I_2} = 
+    \begin{pmatrix}
+        0 & 0\\ 0 & 0
+    \end{pmatrix}
+\end{equation}
+\begin{equation}
+    M_{I_1 I_3} = 
+    \begin{pmatrix}
+        m^2 & 2mg\braket{\phi_2} \\
+        2mg\braket{\phi_2} & m^2 + 2g^2 M^2 + 4g^2 \braket{\phi_2}
+    \end{pmatrix}
+\end{equation}
+
+Diagonalising the non-diagonal spectrums, the masses are
+\begin{eqnarray}
+    m_{R_1} &=& \sqrt{m^2 + g^2 \left\lbrace 2\braket{\phi_2}^2 - M^2 - \sqrt{(2\braket{\phi_2}^2 - m^2) ^2 - 4\frac{m^2}{g^2} \braket{\phi_2}^2} \right\rbrace} \nonext
+    m_{I_1} &=& \sqrt{m^2 + g^2 \left\lbrace 2\braket{\phi_2}^2 - M^2 + \sqrt{(2\braket{\phi_2}^2 - m^2) ^2 - 4\frac{m^2}{g^2} \braket{\phi_2}^2} \right\rbrace} \nonext
+    m_{R_2} &=& 0 \nonext
+    m_{I_2} &=& 0 \nonext
+    m_{R_3} &=& \sqrt{m^2 + g^2 \left\lbrace 2\braket{\phi_2}^2 - M^2 + \sqrt{(2\braket{\phi_2}^2 - m^2) ^2 - 4\frac{m^2}{g^2} \braket{\phi_2}^2} \right\rbrace} \nonext
+    m_{I_3} &=& \sqrt{m^2 + g^2 \left\lbrace 2\braket{\phi_2}^2 - M^2 - \sqrt{(2\braket{\phi_2}^2 - m^2) ^2 - 4\frac{m^2}{g^2} \braket{\phi_2}^2} \right\rbrace} \nonext
+\end{eqnarray}
+
+The masses of the fermions are embedded in 
+\begin{equation}
+    \mathcal{L}_{Fermion} = -\frac{1}{2} \sum_{i \neq j} \diff{^2 \mathcal{W}}{\phi_i \partial \phi_j} \chi_i\cdot\chi_j + h.c.
+\end{equation}
+
+Using the shifted $\phi_2$ as we did earlier, the superpotential becomes
+\begin{equation}
+    \mathcal{W} = m\phi_1 \phi_3 + g\phi_2(\phi_3^2 - M^2) + g\braket{\phi_2} (\phi_3^2 - M^2) + \dots
+\end{equation}
+
+The mass spectrum for the fermions is
+\begin{equation}
+    M_{Fermion} =
+    \begin{pmatrix}
+        0 & 0 & M \\ 0 & 0 & 0 \\ M & 0 & 2g\braket{\phi_2}
+    \end{pmatrix}
+\end{equation}
+for which we will have to diagonalise $M^\dagger M$. After doing so, the mass is
+\begin{equation}
+    m_f = \sqrt{g^2 \braket{\phi_2}^2 + m^2} \pm g \braket{\phi_2}
+\end{equation}
+which is degenerate only when $\braket{\phi_2} = 0$.
+
+Putting them all together when $\braket{\phi_2} = 0$,
+\begin{eqnarray}
+    m_{\phi_1} &=& \left\vert \sqrt{m^2 - g^2 M^2} + i \sqrt{m^2 + g^2 M^2} \right\vert^2 \quad , \quad m_{\chi_\mp} = m \nonext
+    m_{\phi_2} &=& 0 \quad , \quad m_{\chi_2} = 0 \nonext
+    m_{\phi_3} &=& 0 \quad , \quad m_{\chi_\pm} = 0
+\end{eqnarray}
+where we see the broken symmetry in $\phi_1$ and $\chi_\mp$.
+
+However the problem now is that by calculating the supertrace -- the sum of all the masses squared with a factor of its spin, we find that it vanishes.
+\begin{equation}
+    STr(M^2) \equiv \sum_{particles} (-1)^{2s} (2s + 1)^2 m^2_{particle}
+\end{equation}
+
+The consequence of this is that the invariance of the mass distribution that came from the spontaneous symmetry breaking is a net $0$. We have a heavier and lighter superpartner, both split by $g^2 M^2$, where the lighter superparticle happens to be lighter than the superpartner! We know for a fact that we have not measured anything of this sort, so it suggests very strongly that $F$-type breaking is not the appropriate way to break the symmetry.
+
+\section{$D$-type breaking}
+\label{ch:14:d-type breaking}
+There are 2 ways we can approach this:
+\begin{enumerate}
+    \item $\braket{D} \neq 0$
+    \item $\braket{D} + \braket{F} \neq 0$
+\end{enumerate}
+
+The first case is the case for singly $U(1)$ charged theories, whereas the second is the case for all others. The reason why it is split is because for singly charged gauge theories, there is no superpotential present since its requirement as being holomorphic would break gauge invariance. Of course, we can consider more exotic theories but that is not our purpose here.
+\subsection{Singly $U(1)$ charged left-chiral superfield}
+\label{ch:14:d-type breaking:singly u1 charged left-chiral superfield}
+We have $D = q\phi^\dagger\phi - \zeta$ for $U(1)$ charges. Clearly, the sign of $q$ is the source of the symmetry breaking.
+
+Consider: $\zeta / q < 0$
+\begin{equation}
+    V_{min} = \left[ \frac{1}{2} q^2 (\vert\phi\vert^2 + \vert\zeta/q\vert\vert )^2 \right]_{min} = \frac{1}{2} \zeta^2
+\end{equation}
+at $\vert\phi\vert^2 = 0$.
+
+Let us find the mass spectrum for this theory. We know that $A_\mu$ and its superpartner $\lambda$ so we can just omit from our calculations. Moreover, since there is no superpotential $\mathcal{W}$, the spinors of $\Phi$ are massless too. Decomposing the bosons of $\Phi$ into its real and imaginary parts, we get
+\begin{equation}
+    V = \frac{1}{2} q^2 (R^2 + I^2 - \zeta / q )^2
+\end{equation}
+\begin{equation}
+    \implies m_R = m_I = \sqrt{\vert \zeta q \vert}
+\end{equation}
+
+This implies that there is a spontaneous breaking of the boson (sfermion) and fermion masses, and it is very interesting to see that unlike the $F$-type breaking, the breaking results in a increase in mass for both sfermions instead of having one heavier and lighter. Finding the supertrace, we see that it is non-zero too:
+\begin{equation}
+    STr(M^2) = 2\vert\zeta q \vert
+\end{equation}
+
+It can also be shown that in general, the supertrace can be calculated using the vev of the $D$ fields
+\begin{equation}
+    STr(M^2) = 2\braket{D} \sum_i q_i
+\end{equation}
+
+Consider : $\zeta / q > 0$
+Clearly in this case, $V_{min} = 0$ at $\vert \phi \vert = \sqrt{\zeta / q}$. We do not see any broken supersymmetry.
+
+\subsection{$D$-type breaking the sQED}
+For this theory, we can now consider the contribution from $\braket{F}$ because of the presence of the superpotential. The auxiliary fields are
+\begin{equation}
+    \mathcal{W} = m\mathcal{E}_e\mathcal{E}_{\Bar{e}} \quad , \quad D = e \vert \Tilde{\phi}_{\Bar{e}} \vert^2 - e \vert \Tilde{\phi}_e \vert^2 - \zeta
+\end{equation}
+We still have the F.I. term because the sQED is still an abelian gauge theory.
+
+Now, looking at $D$, we see that it is always possible for us to pick appropriate values of $\Tilde{\phi}_{\Bar{e}}$ and $\Tilde{\phi}_e$ such that $\braket{D} = 0$. Let us verify if that condition holds for $\braket{F} = 0$.
+
+\begin{equation}
+    F^\dagger_e = -m \Tilde{\phi}_{\Bar{e}} \quad , \quad F^\dagger_{\Bar{e}} = -m \Tilde{\phi}_{\Bar{e}}
+\end{equation}
+The conditions for $\braket{F} = 0$ are simple: $\Tilde{\phi}_{\Bar{e}} = \Tilde{\phi}_e = 0$. However, this contradicts $\Bar{D} = 0$, so we can see that supersymmetry is naturally spontaneously broken. Let us find the mass spectrum to see how the masses distribute. The potential when fully expanded is
+\begin{equation}
+    V = (m^2 - e\zeta) \vert \Tilde{\phi}_e\vert^2 + (m^2 + e\zeta)\vert \Tilde{\phi}_{\Bar{e}}\vert^2 + \frac{1}{2} \zeta^2 + \frac{1}{2} e^2 (\phi \Tilde{\phi}_{\Bar{e}}\vert^2 - \vert\Tilde{\phi}_e\vert^2)^2
+\end{equation}
+
+$V_{min}$ is yet again dependent on the sign of $m^2 - e \zeta$. 
+
+Case: $m^2 > e \zeta$
+\begin{equation}
+    \implies V_{min} = \frac{1}{2} \zeta^2 \quad , \quad \Tilde{\phi}_e = \quad \Tilde{\phi}_{\Bar{e}} = 0
+\end{equation}
+which implies that there is no spontaneous gauge symmetry breaking.
+
+The mass spectrum of this potential is simple because there are no bilinear terms.
+\begin{equation}
+    m^2_{\Tilde{\phi}_{e}} = m^2 - e\zeta \quad , \quad m^2_{\Tilde{\phi}_{\Bar{e}}} = m^2 + e\zeta
+\end{equation}
+We need not go further to see the problem. The mass of the selectron is lighter than the electron, which brings us back to square one. The reason behind this unacceptable non-degeneracy is the hypercharge of the $U(1)$ gauge. sQED needed to be invariant, implying a net of 0 hypercharge. This resulted in the need for the degeneracy to break in opposite signs and leaving a supertrace of 0.
+
+\section{Explicit supersymmetry breaking}
+\label{ch:14:explicity susy breaking}
+We have seen how supersymmetry does not actually break spontaneously (or at least it should not). What we now need to do is to break it explicitly while keeping the most important aspects of it (otherwise there really is no point in using supersymmetry at all). Let us look back at what we did to show how supersymmetry neatly handles the quadratic divergences.
+
+\begin{eqnarray}
+    \mathcal{L}_{Free} &=& \frac{1}{2}\partial_\mu A \partial^\mu A + \frac{1}{2} \partial_\mu B \partial^\mu B - \frac{1}{2} m_A^2 A^2 - \frac{1}{2} m_B^2 B^2 + \frac{1}{2} \Bar{\psi}_M (i\gamma^\mu \partial_\mu - m_F) \psi_M \nonext
+    \mathcal{L}_{int} &=& \mathcal{L}_1 + \mathcal{L}_2 + \mathcal{L}_3 + \mathcal{L}_4 \nonext
+    \mathcal{L}_1 &=& - \frac{1}{2} {g_1}^2 A^4 - {g_2}^2 A^2 B^2 - \frac{1}{2} {g_3}^2 B^4 \nonext
+    \mathcal{L}_2 &=& -m_F g_4 A^3 - m_F g_5 AB^2 \nonext
+    \mathcal{L}_3 &=& -g_6 A \Bar{\psi}_M \psi_M \nonext
+    \mathcal{L}_4 &=& -i g_7 B \Bar{\psi}_M \gamma_5 \psi_M \nonext
+\end{eqnarray}
+
+The coupling terms are all not assumed to be equal for what we are planning to do from here. It is, however, obvious that in an unbroken supersymmetry,
+\begin{equation}
+    m = m_F \quad , \quad g_i = g
+\end{equation}
+giving us the equations in Chapter \ref{ch:9} Section \ref{ch:9:explicit calculations on the wess-zumino model}.
+
+Our aim here is to parameterise the breaking of supersymmetry by how much all the coupling constants will deviate from $g$. Let us recall that all the quadratically divergent integrals are proportional to $I_d$:
+\begin{equation}
+    I_d = \int \frac{\td^4 p}{(2\pi)^4} \exp[-i p \cdot (x-y) ]\left(\frac{i}{p^2 - {m_B}^2 + i \varepsilon}\right)^2 \int\frac{\td^4 q}{(2\pi)^4} \frac{1}{q^2 - m^2 + i\varepsilon}
+\end{equation}
+where here $m \in \{m_A , m_B, m_F\}$. The quadratic divergent terms are independent of $m$, which means that we can conveniently set $m = 0$ and ignore the logarithmic divergence. If we were to redo the calculations in Chapter \ref{ch:9} Section \ref{ch:9:explicit calculations on the wess-zumino model}, we would see:
+\begin{eqnarray}
+    \text{A - tadpole} &=& 6i g_4 g_5 \frac{{m_F}^2}{{m_A}^2} I_d \nonext
+    \text{B - tadpole} &=& 2i {g_5}^2 \frac{{m_F}^2}{{m_A}^2} I_d \nonext
+    \text{F - tadpole} &=& -8ig_5 g_6 \frac{{m_F}^2}{{m_A}^2} I_d \nonumber
+\end{eqnarray}
+
+For all these to cancel, the only condition we have to satisfy is
+\begin{equation}
+    3g_4 + g_5 = 4g_6
+    \label{eqn:14:g constraint}
+\end{equation}
+which is very interesting because there is no constraint on the masses of the bosons. This means that bosons can remain degenerate in mass even in broken supersymmetry or they can lost it all the same and not affect the divergence. Because of this, we can add (or remove) boson masses to the Lagrangian and not expect it to affect the divergence.
+
+\begin{equation}
+    \mathcal{L}_{SB} = \delta {m_A}^2 A^2 + \delta {m_B}^2 B^2
+\end{equation}
+
+Returning to the coupling constant constraint, we have the freedom to fix one term. Let us have $g_6 = g$. Thus,
+\begin{equation}
+    3g_4 + g_5 = 4g
+\end{equation}
+where it means that unbroken supersymmetry, $g_4 = g_5$.
+
+Let us allow $g_4$ be arbitrary:
+\begin{equation}
+    g_4 = g + \delta g_4
+\end{equation}
+\begin{equation}
+    \implies g_5 = g - 3\delta g_4
+\end{equation}
+and we have the condition that is has only 1 free variable.
+
+The only terms that are affected by this variance are $\mathcal{L}_2$ and $\mathcal{L}_3$. Putting them in,
+\begin{equation}
+    \mathcal{L}_2 + \mathcal{L}_3 = -gA\Bar{\psi}_M \psi_M - m_F g (A^3 + AB^2) - m_F \delta g_4 (A^3 - 3AB^2)
+\end{equation}
+
+Interestingly, the new term can actually be expressed as
+\begin{equation}
+    -m_F \delta g_4 (A^3 - 3AB^2) = \delta m_F (\phi^3 + h.c.)
+\end{equation}
+where we have defined $\delta m_F \equiv -m_F \delta g_4$.
+
+Put all together, the soft-breaking terms are 
+\begin{eqnarray}
+    \mathcal{L}_{SB} &=& \delta {m_A}^2 + \delta {m_B}^2 - \delta m_F (\phi^3 + h.c.) \nonext
+    &=& (\delta {m_A}^2 + \delta {m_B}^2 ) \phi^\dagger \phi + \frac{1}{2}(\delta {m_A}^2 - \delta {m_B}^2 ) (\phi^2 + h.c.) - \delta m_F (\phi^3 + h.c.) \nonext
+    &\equiv& \delta {m_+}^2 \phi^\dagger \phi + \frac{1}{2} \delta {m_-}^2 (\phi^2 + h.c.) + \delta m_F (\phi^3 + h.c.)
+\end{eqnarray}
+
