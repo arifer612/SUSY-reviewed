@@ -1,0 +1,249 @@
+\chapter{The phenomenological consequence of the MSSM}
+\label{ch:16}
+
+We have built the MSSM in the last chapter. Let us now attempt to break the necessary symmetries and find particles that we might be able to measure to prove the theory.
+
+\section{Softly breaking the MSSM}
+We have to softly break the MSSM instead of allowing it to break spontaneously because, as we have seen in Chapter \ref{ch:14}, spontaneous breaking is not a valid possibility. Recall how we added new mass terms which we know would not affect the quadratic divergences from vanishing to break the symmetry. We shall do the same to the MSSM. Let us focus on the scalar potential terms as they are key to breaking the symmetry. There are quite a few terms to consider. As with the sQED and SM, we will not be breaking the colour gauge so the charges will either be 0 or have the condition that their , vev vanishes. R-parity has to be upheld as well (this implies a vanish sneutrino vev).
+
+\section{Scalar masses}
+To deduce the scalar masses, we have to extract the terms of the superpotential which would have non-zero vevs. In the end, the only non-zero vev have to come from the 2 Higgs fields, $\mathcal{H}_u^0$ with a hypercharge $Y = 1$ and $\mathcal{H}_d^0$ with a hypercharge $Y = -1$. The scalar potential is
+\begin{equation}
+    V = \sum_i \left\vert \diff{\mathcal{W}}{\phi_i} \right\vert^2 + \frac{1}{2} D^2 + \frac{1}{2} D^a D^a + V_{SSB}
+\end{equation}
+where $V_{SSB}$ are the additional mass terms from the soft symmetry breaking.
+ 
+When expanded, we get
+\begin{equation}
+    V = \sum_i \left\vert \diff{\mathcal{W}}{\phi_i} \right\rvert^2 + \frac{1}{2} {g^\prime}^2 \left(\sum_{i = u,d} \frac{1}{2} Y_i H_i^\dagger H_i \right)^2 + \frac{1}{2} g^2 \left(\frac{1}{2} H^\dagger_u \tau^i H_u + \frac{1}{2} H^\dagger_d \tau^i H_d \right)^2 + V_{SSB}
+    \label{eqn:16:scalar potential}
+\end{equation}
+
+Let us recall that we have defined $H_d$ as the transposed hermitian conjugate of $H_u$ as
+\begin{equation}
+    H_u \equiv \col{H^+_u}{H^0_u} \quad , \quad H_d \equiv \col{H^0_d}{H^-_d}
+\end{equation}
+
+In Equation \ref{eqn:mssm:superpotential}, the only term that will have a non-vanishing vev is $\mu \mathcal{H}_u \circ \mathcal{H}_d$. Taking the F terms of this, we will get 
+\begin{equation}
+    \mathcal{W} = \left. \mu \mathcal{H}_u \circ \mathcal{H}_d \right\vert_F + h.c. = \mu (H^+_u H^-_d - H^0_u H^0_d) + h.c.
+\end{equation}
+
+Putting this into Equation \ref{eqn:16:scalar potential}, we will get
+\begin{eqnarray}
+    V &=& \lc\vert\mu\vert^2 + \delta m^2_{H_u}\rc \lc \vert H^+_u\vert^2 + \vert H^0_u\vert^2 \rc + \lc \vert\mu\vert^2 + \delta m^2_{H_d} \rc \lc \vert H^-_d \vert^2 + \vert H^0_d \vert^2 \rc + \left( \lc H^+_u H^-_d - H^0_u H^0_d \rc + h.c. \right) \nonext
+    && + \frac{1}{8} (g^2 + {g^\prime}^2 ) \lc \vert H^+_u \vert^2 + \vert H^0_u \vert^2 - \vert H^-_d \vert^2 - \vert H^0_d \vert^2 \rc)^2 + \frac{1}{2} g^2 \vert {H^0_d}^\dagger H^+_u + {H^-_d}^\dagger H^0_u \vert^2
+\end{eqnarray}
+where $b$ is the soft breaking coupling constant of the $H_u$-$H_d$ interaction.
+
+With this, we can define new coupling constants that would sweepingly embed the soft breaking terms and clean the up the notations:
+\begin{eqnarray}
+    a_1 &\equiv& \vert \mu \vert^2 + \delta m^2_{H_u} \nonext
+    a_2 &\equiv& \vert \mu \vert^2 + \delta m^2_{H_d} \nonext
+    c &\equiv& \frac{1}{8}(g^2 + {g^\prime}^2)
+\end{eqnarray}
+and now our scalar potential has just 5 parameters that we need to verify empirically ($a_1, a_2, b, c, g$). 
+
+We may set $\braket{H^+_u} = 0$ without any loss of generality to reduce the complexity, as we had done so in the symmetry breaking of the SM. Besides that, we shall also be setting $\braket{H^-_d} = 0$ as it was initially defined to take the place of ${H^+_u}^\dagger$ before we explicitly created a second Higgs field. 
+
+Next, we have to recognise the fact that since $V$ is either quadratic or bilinear in $H_u$ and $H_d$, its minimum ($V_n$) will occur when both are $0$. Besides that, let us assume that as with the SM, CP is not spontaneously broken. This means that $V \in \mathbb{R}$. Let us define $x \equiv H^0_u$ and $y \equiv H^0_d$. This way, the minimum potential is:
+\begin{equation}
+    V_n = a_1 x^2 + a_2 y^2 - 2bxy + c(x^2 - y^2)^2 \quad b,c, \geq 0
+    \label{eqn:16:constraint 1}
+\end{equation}
+We can quite treat these new variables literally as spacetime position squared since they are indeed the squares of neutral fields. We shall impose some physics here: the potential should be infinite when the particles are extremely far apart (i.e. $\vert x - y \vert \ll 1$. The only implication of this is that $c$ is necessarily positive, which is already met by our condition. Moreover, we also need to impose the existence of a global minimum on all possible curves. On $x = y$, this condition implies 
+\begin{equation}
+    V_n(x = y) = (a_1 + a_2 - 2b) x^2
+\end{equation}
+needs to have a mininum and thus
+\begin{equation}
+    a_1 + a_2 > 2b
+    \label{eqn:16:constraint 2}
+\end{equation}
+
+Being free variables, we have 3 possible possibilities for this to hold true:
+\begin{enumerate}
+    \item Both $a_1, a_2 > 0$ and $a_1 + a_2 > 2b$
+    \item Only $a_1 > 0$ and $a_1 > 2b + \vert a_2 \vert$
+    \item Only $a_2 > 0$ and $a_2 > 2b + \vert a_1 \vert$
+\end{enumerate}
+
+To ensure that we do have broken symmetry, the minimum potential should not occur at $x = 0$ , $y = 0$. However, the condition that $x = y$ remains a minimum would naturally imply that the origin is a saddle point. Putting these together, we get the next algebraic condition that
+\begin{equation}
+    a_1a_2 < 4b^2
+    \label{eqn:16:constraint 3}
+\end{equation}
+These conditions are enough for us to move on.
+
+As with the case of the SM, let us define the minimum Higgs potentials to be 
+\begin{equation}
+    H_{u, min} = \col{0}{\nu_u} \quad , \quad H_{d, min} = \col{\nu_d}{0}
+\end{equation}
+
+Using the explicit covariant derivative in Equation \ref{eqn:15:review of sm:explicit d mu}, the Lagrangian of the free gauge bosons become
+\begin{equation}
+    \mathcal{L}_{MGB} = \frac{1}{4} ({\nu_u}^2 + {\nu_d}^2) \left[ g^2 \left({W_1}^2 + {W_2}^2\right) + \left( g W_{3\mu} - g^\prime B_\mu \right)^2 \right]
+\end{equation}
+We recognise that since the structure of the Lagrangian is exactly that of the SM, this would mean the the eigenstates would too, be exactly the same. We can thus use the same method to define the masses as:
+\begin{eqnarray}
+    {m_W}^2 &=& \frac{1}{2} g^2 ({\nu_u}^2 + {\nu_d}^2) \nonext
+    (m_Z)^2 &=& \frac{1}{2} (g^2 + {g^\prime}^2) ({\nu_u}^2 + {\nu_d}^2) \nonext
+    m_\gamma &=& 0
+\end{eqnarray}
+where the only difference is that instead of $\nu^2$, we have ${\nu_{SUSY}}^2 = {\nu_u}^2 + {\nu_d}^2$, for which replacing $\nu$ for $\nu_{SUSY}$ will give us the masses of the gauge bosons as in the whole of Chapter \ref{ch:15} Section \ref{ch:15:review of sm:spontaneous breaking of sm}.
+
+Making use of the identity $c = \frac{{m_Z}^2}{4 \nu_{SUSY}}$, our experimental parameters are now:
+\begin{equation}
+    a_1, a_2, b, m_W, m_Z, \nu_{SUSY}
+\end{equation}
+
+With the aid of the constraints we had before, we can reduce the total number of parameters. The minimum of Equation \ref{eqn:16:constraint 1} with respect to $\nu_u$ implies that 
+\begin{equation}
+    a_1 = b\frac{\nu_d}{\nu_u} - \frac{{\nu_u}^2 - {\nu_d}^2}{{\nu_u}^2 + {\nu_d}^2} \frac{{m_Z}^2}{2}
+    \label{eqn:16:a1}
+\end{equation}
+\begin{equation}
+    a_2 = b\frac{\nu_u}{\nu_d} - \frac{{\nu_u}^2 - {\nu_d}^2}{{\nu_u}^2 - {\nu_d}^2} \frac{{m_Z}^2}{2}
+    \label{eqn:16:a2}
+\end{equation}
+
+Noting again that we can define an angle as in Chapter \ref{ch:15} to tidy things up, we have
+\begin{equation}
+    \beta = \arctan \frac{\nu_u}{\nu_d}
+    \label{eqn:16:beta}
+\end{equation}
+and Equations \ref{eqn:16:a1} and \ref{eqn:16:a2} become
+\begin{equation}
+    a_1 = b \cot \beta + \frac{1}{2} {m_Z}^2 \cos 2 \beta
+\end{equation}
+\begin{equation}
+    a_2 = b \tan \beta - \frac{1}{2} {m_Z}^2 \cos 2 \beta
+\end{equation}
+
+Now let us consider the remaining constraints:
+\begin{important}{$a_1 + a_2 > 2b \geq 0$}
+    $\nu_u \neq \nu_d$
+\end{important}
+
+\begin{important}{$a_1 a_2 < b^2$}
+    $b \cos 2 \beta \cot 2 \beta + \frac{1}{4} \cos^2 2 \beta > 0 \implies b > 0$
+\end{important}
+
+And with these, our parameters have essentially been reduced to 5. These are the parameters of SUGRA.
+\begin{equation}
+    {m_W}^2, {m_Z}^2, {\nu_{SUSY}}^2, b, \beta
+\end{equation}
+
+With these, we can start to expand the potential in full to find the terms which would contribute to the mass spectrum of the 2 Higgs fields (as they are the only fields in the scalar potential). We shall, as in Chapter \ref{ch:15} Section \ref{ch:15:review of sm:spontaneous breaking of sm}, decompose the Higgs fields into their real and imaginary components with the standard normalisation factor. We will find that the mass spectrum is quite easily found as the mass spectrum can be broken into a 4 dimensional block diagonal. This simplicity allows us to easily find the right eigenstates and its mass eigenvalues.
+
+\begin{important}{$I^0_u$ \& $I^0_d$}
+    \begin{equation}
+        m^2 = 0 \text{ or } 2b\csc 2\beta
+    \end{equation} 
+    where we can define ${m_{A_0}}^2 = 2b\csc 2\beta$ 
+\end{important}
+
+\begin{important}{$R^0_u$ \& $R^0_d$}
+    \begin{equation}
+        m^2 = \frac{1}{2}({m_{A_0}}^2 + {m_Z}^2) \pm \frac{1}{2} \sqrt{({m_{A_0}}^2 + {m_Z}^2)^2 - 4 {m_{A_0}}^2 {m_Z}^2 \cos^2 2 \beta}
+    \end{equation}
+    where we shall define the positive branch as $m_{H_0}$ and the negative branch as $m_{h_0}$
+\end{important}
+
+\begin{important}{$R^+_u$ \& $R^-_d$}
+    \begin{equation}
+        m^2 = 0 \text{ or } {m_{A_0}}^2 + {m_W}^2
+    \end{equation}
+\end{important}
+
+\begin{important}{$I^0_u$ \& $I^0_d$}
+    \begin{equation}
+        m^2 = 0 \text{ or } {m_{A_0}}^2 + {m_W}^2
+    \end{equation}
+\end{important}
+
+Wrapping it up, we have a total of 3 massless and 5 massive states in the Higgs sector, 4 more massive states than the SM. Their masses are:
+\begin{eqnarray}
+    {m_{A_0}}^2 &=& 2b\csc2\beta \nonext
+    {m_{H^\pm}}^2 &=& {m_W}^2 + {m_{A_0}}^2 \nonext
+    {m_{H_0}}^2 &=& \frac{1}{2}({m_{A_0}}^2 + {m_Z}^2) + \frac{1}{2} \sqrt{({m_{A_0}}^2 + {m_Z}^2)^2 - 4 {m_{A_0}}^2 {m_Z}^2 \cos^2 2 \beta} \nonext
+    {m_{h_0}}^2 &=& \frac{1}{2}({m_{A_0}}^2 + {m_Z}^2) - \frac{1}{2} \sqrt{({m_{A_0}}^2 + {m_Z}^2)^2 - 4 {m_{A_0}}^2 {m_Z}^2 \cos^2 2 \beta} \nonumber
+\end{eqnarray}
+
+Now, let us consider the limiting cases of having vanishing $b$ and $\beta$. The first case results in all but $m_{h_0}$ tending to $\infty$. The second results in $m_{A_0}$ and $m_{h_0}$ vanishing and $m_{H^\pm}$ and $m_{H_0}$ tending to the masses of the gauge bosons.
+
+The exercise that we have done here so far is to find a way to identify the possibility of finding a particle in which is bounded in mass that we can realistically search for. The answer then, is plain and simple, only the $h_0$ particle is bounded. Going through the mathematics and allowing for loop corrections, we find that it indeed is possible that we might be able to find such a particle at about 130 GeV.
+
+\section{Spinor masses}
+Now moving onto the fermions and their superpartners, let us first consider the terms in
+\begin{equation}
+    y^{ij}_u \mathcal{U}_i \mathcal{Q}_i \circ \mathcal{H}_u
+\end{equation}
+which will give us the masses of the quarks, anti-up quark, and their superpartners. Extracting out the $F$ terms, we get
+\begin{equation}
+    \left. y^{ij}_u \mathcal{U}_i \mathcal{Q}_j \circ \mathcal{H}_u \right\vert_F + h.c. = - 2 y^{ij}_u \nu_u \Bar{u}_{L_i} u_j
+\end{equation}
+for which the mass of the up quark (and its respective generations) as 
+\begin{equation}
+    m_u = y_u \nu_u
+\end{equation}
+
+Likewise for the down quark,
+\begin{equation}
+    m_d = y_d \nu_d
+\end{equation}
+
+Lastly for the leptons,
+\begin{equation}
+    m_e = y_e \nu_d
+\end{equation}
+which match exactly that of the SM.
+
+\section{Grand Unified Theory}
+\label{sec:16:GUT}
+The unification of forces is probably the most seductive consequence of SUSY. The idea is that we want to be able to find a way for the 3 fundamental forces (barring gravity) to be part of a larger, simple theory. As of what we have in the SM, the renormalisation of forces do not agree at any energy scale.
+
+To understand what this means, let us look at the general covariant derivative:
+\begin{equation}
+    D_\mu = \partial_\mu + \frac{1}{2} i g_S \lambda^a A^a_\mu + \frac{1}{2} i g \tau^i W^i_\mu + \frac{1}{2} i g^\prime Y B_\mu
+\end{equation}
+
+From what we know, the coupling constants for all 3 gauges are different and be scaled freely however we deem fit. We can do, for example $g^\prime \rightarrow \frac{g^\prime}{c^\prime} c^\prime Y$, create new arbitrary coupling constants and the physics still remain the same.
+
+This is unlike the case of say, just the weak gauge where we have:
+\begin{equation}
+    D_\mu = \partial_\mu + \frac{1}{2} i g_1 \tau^1 W^1_\mu + \frac{1}{2} i g_2 \tau^2 W^2_\mu + \frac{1}{2} i g_3 \tau^3 W^3_\mu 
+\end{equation}
+where we know that in reality, $g_1 = g_2 = g_3$ and we do not have the freedom to scale the coupling constants as we want. 
+
+Saying that the forces are unified at a higher energy scale would mean to say that the gauge groups we have must be subgroups of a much larger one, just as how $\tau^i W^i_\mu$ are subgroups of $W_\mu$.
+
+Let us thus attempt to find a group, or at least make one, of which we may unify our charges and their representations. We shall scale our current charges with arbitrary $c$ constants like the $c^\prime Y$ earlier. To make our calculations natural, our basis will be in a diagonal form. Their normalisation should also be made equal as we had for $g_1 = g_2 = g_3$.
+\begin{equation}
+    Tr\left[\left(c^\prime \frac{Y}{2} \right)^2 \right] = Tr\left[\left(c \frac{\tau^3}{2} \right)^2 \right] = Tr\left[\left(c_S \frac{\lambda^3}{2} \right)^2 \right]
+\end{equation}
+
+We have the freedom to fix one scale, so let us have $c_S = 1$. Defining $T^3 \equiv \frac{1}{2} \tau^3$, 
+\begin{equation}
+    c^2 = \frac{1}{4} \frac{Tr\left[(\lambda^3)^2\right]}{Tr\left[(T^3)^2\right]}
+\end{equation}
+\begin{equation}
+    {c^\prime}^2 = \frac{1}{4} \frac{Tr\left[(\lambda^3)^2\right]}{Tr\left[Y^2\right]}
+\end{equation}
+
+Carrying out the traces, we will find that 
+\begin{equation}
+    c = 1 \quad , \quad c^\prime = \sqrt{3/5}
+\end{equation}
+and thus the generations of the grand unified theory and their respective coupling constants are:
+\begin{equation}
+    \left\lbrace \frac{1}{2} \tau^3 , g \right\rbrace \quad \quad \left\lbrace \frac{1}{2} \lambda^3 , g_S \right\rbrace \quad \quad \left\lbrace \frac{1}{2} \sqrt{\frac{3}{5}} Y , \sqrt{\frac{5}{3}} g^\prime \right\rbrace
+\end{equation}
+
+Unifying the groups are done through the renormalisation group equation:
+\begin{equation}
+    \frac{1}{\alpha(E)} = \frac{1}{\alpha(E_0)} + \frac{\beta}{2\pi} \ln \frac{E}{E_0}
+\end{equation}
+where $E_0$ is usually the energy scale of a known boson.
+
+The $\beta$ function of each gauge theory is dependent on the kind of gauge group it is and then number of particles in that theory. After calculation, we will find that $\alpha$ of all 3 gauge theories do not meet at the same point. However, with the increased number of particles that comes with SUSY, all 3 coincide at a single point with a reasonable room for error! The most exciting part of this is that with just a few more corrections, we may even get the error to reduce and have a fully unified grand theory of the 3 forces!
